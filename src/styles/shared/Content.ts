@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Content = styled.div`
 	${({ theme }) => css`
 		padding: 20px;
 		@media screen and (${theme.breakpoints.medium}) {
