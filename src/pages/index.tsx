@@ -6,6 +6,7 @@ import { anchors } from "@/assets/anchors";
 
 import { BaseLink, Paragraph } from "@/styles";
 import * as S from "@/styles/pages/home-styles";
+import { WhatsappLink } from "@/components/Links/WhatsappLink";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<AppLayout anchors={anchors}>
+				<WhatsappLink />
 				<S.HeroArticle>
 					<S.HeroSection>
 						<S.HeroTexts>

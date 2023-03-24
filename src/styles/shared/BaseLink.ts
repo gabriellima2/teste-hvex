@@ -2,11 +2,11 @@ import Link from "next/link";
 import styled, { css } from "styled-components";
 
 type BaseLinkProps = {
-	onlyBorder: boolean;
+	onlyBorder?: boolean;
 };
 
 export const BaseLink = styled(Link)<BaseLinkProps>`
-	${({ theme, onlyBorder }) => css`
+	${({ theme, onlyBorder = false }) => css`
 		display: flex;
 		align-items: center;
 		justify-content: center;
