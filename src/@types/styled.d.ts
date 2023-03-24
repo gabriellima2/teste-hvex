@@ -16,7 +16,7 @@ declare module "styled-components" {
 			main: string;
 			font: {
 				light: string;
-				accent: string;
+				util: string;
 				dark: string;
 			};
 			utils: {

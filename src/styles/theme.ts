@@ -21,7 +21,7 @@ export const theme: DefaultTheme = {
 		},
 		font: {
 			light: "#FDFDFD",
-			accent: "#1C2C44",
+			util: "#115678",
 			dark: "#373737",
 		},
 		utils: {
