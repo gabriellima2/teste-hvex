@@ -23,6 +23,14 @@ ${({ theme }) => css`
 	p {
 		font-size: ${theme.fontSizes.small};
 	}
+	li {
+		list-style: none;
+		color: ${theme.colors.font.light};
+	}
+	a {
+		text-decoration: none;
+		color: ${theme.colors.font.light};
+	}
 `}
 
 `;
