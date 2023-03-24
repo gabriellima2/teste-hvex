@@ -1,5 +1,7 @@
 import { DefaultTheme } from "styled-components";
 
+export const WINDOW_WIDTH_WHEN_NOT_MOBILE = 1024;
+
 export const theme: DefaultTheme = {
 	fontFamily: {
 		main: "'Inter', sans-serif",
@@ -46,7 +48,7 @@ export const theme: DefaultTheme = {
 	},
 	breakpoints: {
 		default: "(min-width: 767px)",
-		medium: "(min-width: 1024px)",
+		medium: `(min-width: ${WINDOW_WIDTH_WHEN_NOT_MOBILE}px)`,
 		large: "(max-width: 1024px && min-width: 1440px)",
 	},
 };

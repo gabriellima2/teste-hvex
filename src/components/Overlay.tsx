@@ -6,7 +6,7 @@ type OverlayProps = {
 
 export const Overlay = (props: OverlayProps) => {
 	const { handleClick } = props;
-	return <Area onClick={handleClick} />;
+	return <Area onClick={handleClick} aria-hidden="true" />;
 };
 
 const Area = styled.div`
