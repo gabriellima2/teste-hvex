@@ -1,6 +1,11 @@
 import Head from "next/head";
+
 import { AppLayout } from "@/layouts/AppLayout";
+
 import { anchors } from "@/assets/anchors";
+
+import { BaseLink, Paragraph } from "@/styles";
+import * as S from "@/styles/pages/home-styles";
 
 export default function Home() {
 	return (
@@ -12,7 +17,32 @@ export default function Home() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<AppLayout anchors={anchors}>
-				<h1>Hello World</h1>
+				<S.HeroArticle>
+					<S.HeroSection>
+						<S.HeroTexts>
+							<S.HeroTitle>
+								Tenha Informações em tempo real das condições dos ativos e com o
+								monitoramento inteligente
+							</S.HeroTitle>
+							<Paragraph>
+								Tenha acesso a informações em tempo real, administração remota
+								de dados importantes da rede elétrica como: tensão, corrente,
+								potência passante, energia, temperatura, sobrecarga entre
+								outros, mapeando seu funcionamento, prevendo a vida útil dos
+								ativos e aferindo perdas técnicas e não técnicas.
+							</Paragraph>
+						</S.HeroTexts>
+						<BaseLink href="#" onlyBorder={false}>
+							Quero mais informações
+						</BaseLink>
+					</S.HeroSection>
+					<S.HeroImage
+						src="/image1.png"
+						alt="Imagem do produto 1"
+						width={100}
+						height={100}
+					/>
+				</S.HeroArticle>
 			</AppLayout>
 		</>
 	);
