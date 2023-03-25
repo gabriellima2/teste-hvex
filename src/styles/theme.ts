@@ -27,6 +27,7 @@ export const theme: DefaultTheme = {
 		utils: {
 			accent: "#1C2C44",
 			contrast: "#252835",
+			light: "#FDFDFD",
 		},
 	},
 	spaces: {

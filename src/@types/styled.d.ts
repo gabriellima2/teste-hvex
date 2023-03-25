@@ -22,6 +22,7 @@ declare module "styled-components" {
 			utils: {
 				accent: string;
 				contrast: string;
+				light: string;
 			};
 			brand: {
 				main: string;
