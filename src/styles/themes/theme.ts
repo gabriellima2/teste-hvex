@@ -17,7 +17,8 @@ export const theme: DefaultTheme = {
 		main: "#1B2033",
 		brand: {
 			main: "#00B6DE",
-			secondary: "#036FC0",
+			secondary: "#52E0FF",
+			util: "#036FC0",
 		},
 		font: {
 			light: "#FDFDFD",

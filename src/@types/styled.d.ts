@@ -27,6 +27,7 @@ declare module "styled-components" {
 			brand: {
 				main: string;
 				secondary: string;
+				util: string;
 			};
 		};
 		spaces: {
