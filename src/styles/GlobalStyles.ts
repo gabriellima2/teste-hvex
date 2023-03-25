@@ -7,6 +7,10 @@ ${({ theme }) => css`
 		padding: 0;
 		box-sizing: border-box;
 	}
+	html,
+	body {
+		overflow-x: hidden;
+	}
 	body {
 		font-family: ${theme.fontFamily.main};
 		color: ${theme.colors.font.light};
