@@ -13,24 +13,36 @@ ${({ theme }) => css`
 		background: ${theme.colors.main};
 	}
 	h1 {
-		font-size: ${theme.fontSizes.x_large};
 		font-weight: 700;
+		font-size: ${theme.fontSizes.large};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.x_large};
+		}
 	}
 	h2 {
-		font-size: ${theme.fontSizes.large};
 		font-weight: 700;
+		font-size: ${theme.fontSizes.normal};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.large};
+		}
 	}
 	p {
-		font-size: ${theme.fontSizes.small};
+		font-size: ${theme.fontSizes.x_small};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.small};
+		}
 	}
 	li {
 		list-style: none;
 		color: ${theme.colors.font.light};
+		font-size: ${theme.fontSizes.x_small};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.small};
+		}
 	}
 	a {
 		text-decoration: none;
 		color: ${theme.colors.font.light};
 	}
 `}
-
 `;

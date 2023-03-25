@@ -40,14 +40,8 @@ export const GroupText = styled.div`
 `;
 
 export const HeroTitle = styled.h1`
-	${({ theme }) => css`
-		width: 100%;
-		max-width: 800px;
-		font-size: ${theme.fontSizes.large};
-		@media screen and (${theme.breakpoints.default}) {
-			font-size: ${theme.fontSizes.x_large};
-		}
-	`}
+	width: 100%;
+	max-width: 800px;
 `;
 
 export const HeroImage = styled(Image)`

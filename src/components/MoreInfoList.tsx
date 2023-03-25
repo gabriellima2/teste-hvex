@@ -43,10 +43,6 @@ const MoreInfoListItem = styled.li`
 		align-items: center;
 		gap: ${theme.spaces[7]};
 		color: ${theme.colors.font.dark};
-		font-size: ${theme.fontSizes.x_small};
 		font-weight: 700;
-		@media screen and (${theme.breakpoints.default}) {
-			font-size: ${theme.fontSizes.small};
-		}
 	`}
 `;
