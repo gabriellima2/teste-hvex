@@ -1,7 +1,12 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 
-import { DefaultContainer, WhatsappLink, MoreInfoList } from "@/components";
+import {
+	DefaultContainer,
+	WhatsappLink,
+	MoreInfoList,
+	SpecList,
+} from "@/components";
 import { AppLayout } from "@/layouts/AppLayout";
 
 import {
@@ -14,6 +19,7 @@ import {
 	Article,
 } from "@/styles";
 
+import { specsPreview } from "@/assets/specs-preview";
 import { benefits } from "@/assets/benefits";
 import { anchors } from "@/assets/anchors";
 
@@ -77,6 +83,31 @@ export const HomeTemplate = () => {
 					</BenefitsArticle>
 				</DefaultContainer>
 			</WhiteBgColor>
+
+			<DefaultContainer>
+				<SpecPreviewArticle>
+					<GroupText>
+						<SpecPreviewTitleGroup>
+							<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
+							<Subtitle isAccent>
+								É o dispositivo capaz de integrar os transformadores as redes
+								inteligentes
+							</Subtitle>
+						</SpecPreviewTitleGroup>
+
+						<Paragraph>
+							O Omni Trafo envia informações em tempo real, permitindo a
+							administração remota de dados importantes da rede elétrica, como
+							tensão, corrente, potência passante, energia, temperatura,
+							sobrecarga entre outros, mapeando seu funcionamento, prevendo a
+							vida útil dos ativos e aferindo perdas técnicas e não técnicas.
+						</Paragraph>
+					</GroupText>
+					<SpecsPreview>
+						<SpecList specs={specsPreview} variants="preview" />
+					</SpecsPreview>
+				</SpecPreviewArticle>
+			</DefaultContainer>
 		</AppLayout>
 	);
 };
@@ -155,6 +186,42 @@ export const BenefitsImage = styled(Image)`
 		@media screen and (${theme.breakpoints.medium}) {
 			max-width: 550px;
 			max-height: 680px;
+		}
+	`}
+`;
+
+const SpecPreviewArticle = styled(Article)`
+	${({ theme }) => css`
+		padding: ${theme.spaces[15]} 0px;
+		flex-direction: column;
+		gap: ${theme.spaces[14]};
+		@media screen and (${theme.breakpoints.medium}) {
+			flex-direction: row;
+		}
+	`}
+`;
+
+const SpecPreviewTitleGroup = styled.div``;
+
+const SpecPreviewTitle = styled.h1`
+	${({ theme }) => css`
+		font-size: ${theme.fontSizes.normal};
+		margin-bottom: ${theme.spaces[13]};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.large};
+		}
+	`}
+`;
+
+const SpecsPreview = styled.section`
+	${({ theme }) => css`
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: ${theme.spaces[8]};
+		@media screen and (${theme.breakpoints.default}) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(2, 1fr);
 		}
 	`}
 `;

@@ -7,3 +7,4 @@ export * from "./Subtitle";
 export * from "./CenteredArticle";
 export * from "./SubInfoSection";
 export * from "./WhiteBgColor";
+export * from "./Card";
