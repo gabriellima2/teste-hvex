@@ -1,12 +1,16 @@
-import styled, { css } from "styled-components";
+import styled, { css, CSSProperties } from "styled-components";
 
-export const Article = styled.article`
-	${({ theme }) => css`
+type ArticleProps = Pick<CSSProperties, "alignItems"> & {};
+
+export const Article = styled.article<ArticleProps>`
+	${({ theme, alignItems }) => css`
 		display: flex;
-		flex-direction: row;
-		align-items: center;
+		flex-direction: column;
+		align-items: ${alignItems || "center"};
 		justify-content: space-between;
-		flex-wrap: wrap;
 		gap: ${theme.spaces[5]};
+		@media screen and (${theme.breakpoints.default}) {
+			flex-direction: row;
+		}
 	`}
 `;

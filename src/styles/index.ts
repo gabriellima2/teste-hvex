@@ -6,3 +6,6 @@ export * from "./shared/BaseLink";
 export * from "./shared/Article";
 export * from "./shared/Paragraph";
 export * from "./shared/Subtitle";
+export * from "./shared/CenteredArticle";
+export * from "./shared/SubInfoSection";
+export * from "./shared/WhiteBgColor";

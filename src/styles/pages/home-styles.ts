@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 import { Article } from "../shared/Article";
+import { CenteredArticle } from "../shared/CenteredArticle";
+import { SubInfoSection } from "../shared/SubInfoSection";
 
 export const HeroArticle = styled(Article)`
 	${({ theme }) => css`
@@ -23,13 +25,20 @@ export const HeroSection = styled.section`
 	`}
 `;
 
-export const HeroTexts = styled.div``;
+export const GroupText = styled.div`
+	${({ theme }) => css`
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: ${theme.spaces[7]};
+	`}
+`;
 
 export const HeroTitle = styled.h1`
 	${({ theme }) => css`
 		width: 100%;
 		max-width: 800px;
-		margin-bottom: ${theme.spaces[7]};
 		font-size: ${theme.fontSizes.large};
 		@media screen and (${theme.breakpoints.default}) {
 			font-size: ${theme.fontSizes.x_large};
@@ -46,6 +55,31 @@ export const HeroImage = styled(Image)`
 			display: block;
 			height: 100%;
 			max-height: 540px;
+		}
+	`}
+`;
+
+export const BenefitsArticle = styled(CenteredArticle)``;
+
+export const BenefitsSection = styled(SubInfoSection)`
+	${({ theme }) => css`
+		order: 0;
+		@media screen and (${theme.breakpoints.medium}) {
+			order: 1;
+		}
+	`}
+`;
+
+export const BenefitsImage = styled(Image)`
+	${({ theme }) => css`
+		flex: 1;
+		height: 100%;
+		width: 100%;
+		max-width: 700px;
+		max-height: 100%;
+		@media screen and (${theme.breakpoints.medium}) {
+			max-width: 550px;
+			max-height: 680px;
 		}
 	`}
 `;

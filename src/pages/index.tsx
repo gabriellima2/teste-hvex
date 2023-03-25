@@ -1,12 +1,13 @@
 import Head from "next/head";
 
+import { DefaultContainer, WhatsappLink, MoreInfoList } from "@/components";
 import { AppLayout } from "@/layouts/AppLayout";
 
+import { benefits } from "@/assets/benefits";
 import { anchors } from "@/assets/anchors";
 
-import { BaseLink, Paragraph } from "@/styles";
+import { BaseLink, Paragraph, Subtitle, WhiteBgColor } from "@/styles";
 import * as S from "@/styles/pages/home-styles";
-import { WhatsappLink } from "@/components/Links/WhatsappLink";
 
 export default function Home() {
 	return (
@@ -19,34 +20,66 @@ export default function Home() {
 			</Head>
 			<AppLayout anchors={anchors}>
 				<WhatsappLink />
-				<S.HeroArticle>
-					<S.HeroSection>
-						<S.HeroTexts>
-							<S.HeroTitle>
-								Tenha Informações em tempo real das condições dos ativos e com o
-								monitoramento inteligente
-							</S.HeroTitle>
-							<Paragraph>
-								Tenha acesso a informações em tempo real, administração remota
-								de dados importantes da rede elétrica como: tensão, corrente,
-								potência passante, energia, temperatura, sobrecarga entre
-								outros, mapeando seu funcionamento, prevendo a vida útil dos
-								ativos e aferindo perdas técnicas e não técnicas.
-							</Paragraph>
-						</S.HeroTexts>
-						<BaseLink href="#" onlyBorder={false}>
-							Quero mais informações
-						</BaseLink>
-					</S.HeroSection>
-					<S.HeroImage
-						src="/image1.png"
-						alt="Imagem do produto 1"
-						width={100}
-						height={100}
-						quality={100}
-						unoptimized
-					/>
-				</S.HeroArticle>
+				<DefaultContainer>
+					<S.HeroArticle>
+						<S.HeroSection>
+							<S.GroupText>
+								<S.HeroTitle>
+									Tenha Informações em tempo real das condições dos ativos e com
+									o monitoramento inteligente
+								</S.HeroTitle>
+								<Paragraph>
+									Tenha acesso a informações em tempo real, administração remota
+									de dados importantes da rede elétrica como: tensão, corrente,
+									potência passante, energia, temperatura, sobrecarga entre
+									outros, mapeando seu funcionamento, prevendo a vida útil dos
+									ativos e aferindo perdas técnicas e não técnicas.
+								</Paragraph>
+							</S.GroupText>
+							<BaseLink href="#" onlyBorder={false}>
+								Quero mais informações
+							</BaseLink>
+						</S.HeroSection>
+						<S.HeroImage
+							src="/image1.png"
+							alt="Imagem do produto 1"
+							width={100}
+							height={100}
+							quality={100}
+							unoptimized
+						/>
+					</S.HeroArticle>
+				</DefaultContainer>
+
+				<WhiteBgColor>
+					<DefaultContainer flexDirection="row">
+						<S.BenefitsArticle>
+							<S.BenefitsSection>
+								<S.GroupText>
+									<Subtitle>
+										Seja bem-vindo a era da energia inteligente
+									</Subtitle>
+									<Paragraph secondaryColor>
+										As redes inteligentes são um caminho sem volta, o
+										desenvolvimento e disceminação de dispositivos de medição e
+										monitoramento são as ferramentas para redução de custos,
+										perdas e trazem mais previsibilidade para as utilities de
+										energia.
+									</Paragraph>
+								</S.GroupText>
+								<MoreInfoList infos={benefits} isAccentCheckIcon />
+							</S.BenefitsSection>
+							<S.BenefitsImage
+								src="/image2.png"
+								alt="Imagens sobre energia agrupadas"
+								width={100}
+								height={100}
+								quality={100}
+								unoptimized
+							/>
+						</S.BenefitsArticle>
+					</DefaultContainer>
+				</WhiteBgColor>
 			</AppLayout>
 		</>
 	);
