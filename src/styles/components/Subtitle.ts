@@ -6,6 +6,8 @@ type SubtitleProps = {
 
 export const Subtitle = styled.h2<SubtitleProps>`
 	${({ theme, isAccent }) => css`
-		color: ${isAccent ? theme.colors.brand.secondary : theme.colors.font.util};
+		color: ${isAccent
+			? theme.colors.brand.secondary
+			: theme.colors.utils.accent};
 	`}
 `;

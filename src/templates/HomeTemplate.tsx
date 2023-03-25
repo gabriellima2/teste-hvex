@@ -17,8 +17,10 @@ import {
 	CenteredArticle,
 	SubInfoSection,
 	Article,
+	Line,
 } from "@/styles";
 
+import { features } from "@/assets/features";
 import { specsPreview } from "@/assets/specs-preview";
 import { benefits } from "@/assets/benefits";
 import { anchors } from "@/assets/anchors";
@@ -61,7 +63,9 @@ export const HomeTemplate = () => {
 					<BenefitsArticle>
 						<BenefitsSection>
 							<GroupText>
-								<Subtitle>Seja bem-vindo a era da energia inteligente</Subtitle>
+								<BenefitsTitle>
+									Seja bem-vindo a era da energia inteligente
+								</BenefitsTitle>
 								<Paragraph secondaryColor>
 									As redes inteligentes são um caminho sem volta, o
 									desenvolvimento e disceminação de dispositivos de medição e
@@ -108,6 +112,31 @@ export const HomeTemplate = () => {
 					</SpecsPreview>
 				</SpecPreviewArticle>
 			</DefaultContainer>
+
+			<WhiteBgColor>
+				<DefaultContainer flexDirection="row">
+					<CenteredArticle>
+						<SubInfoSection>
+							<GroupText>
+								<Subtitle>
+									Desenvolvido para melhorar a performance dos ativos de
+									distribuição
+								</Subtitle>
+								<Line />
+							</GroupText>
+							<MoreInfoList infos={features} />
+						</SubInfoSection>
+						<FeaturesImage
+							src="/image3.png"
+							alt="Imagem do Omni Transformer"
+							width={100}
+							height={100}
+							quality={100}
+							unoptimized
+						/>
+					</CenteredArticle>
+				</DefaultContainer>
+			</WhiteBgColor>
 		</AppLayout>
 	);
 };
@@ -176,6 +205,12 @@ export const BenefitsSection = styled(SubInfoSection)`
 	`}
 `;
 
+const BenefitsTitle = styled(Subtitle)`
+	${({ theme }) => css`
+		color: ${theme.colors.font.util};
+	`}
+`;
+
 export const BenefitsImage = styled(Image)`
 	${({ theme }) => css`
 		flex: 1;
@@ -222,6 +257,20 @@ const SpecsPreview = styled.section`
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
+		}
+	`}
+`;
+
+export const FeaturesImage = styled(Image)`
+	${({ theme }) => css`
+		flex: 1;
+		height: 100%;
+		width: 100%;
+		max-width: 700px;
+		max-height: 100%;
+		@media screen and (${theme.breakpoints.medium}) {
+			max-width: 630px;
+			max-height: 630px;
 		}
 	`}
 `;
