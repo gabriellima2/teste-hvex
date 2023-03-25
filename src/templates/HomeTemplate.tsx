@@ -60,7 +60,7 @@ export const HomeTemplate = () => {
 
 			<WhiteBgColor>
 				<DefaultContainer flexDirection="row">
-					<BenefitsArticle>
+					<CenteredArticle>
 						<BenefitsSection>
 							<GroupText>
 								<BenefitsTitle>
@@ -84,7 +84,7 @@ export const HomeTemplate = () => {
 							quality={100}
 							unoptimized
 						/>
-					</BenefitsArticle>
+					</CenteredArticle>
 				</DefaultContainer>
 			</WhiteBgColor>
 
@@ -141,7 +141,7 @@ export const HomeTemplate = () => {
 	);
 };
 
-export const HeroArticle = styled(Article)`
+const HeroArticle = styled(Article)`
 	${({ theme }) => css`
 		min-height: 500px;
 		padding: ${theme.spaces[4]} 0px;
@@ -155,7 +155,7 @@ export const HeroArticle = styled(Article)`
 	`}
 `;
 
-export const HeroSection = styled.section`
+const HeroSection = styled.section`
 	${({ theme }) => css`
 		display: flex;
 		flex-direction: column;
@@ -166,7 +166,7 @@ export const HeroSection = styled.section`
 	`}
 `;
 
-export const GroupText = styled.div`
+const GroupText = styled.div`
 	${({ theme }) => css`
 		width: 100%;
 		display: flex;
@@ -176,12 +176,12 @@ export const GroupText = styled.div`
 	`}
 `;
 
-export const HeroTitle = styled.h1`
+const HeroTitle = styled.h1`
 	width: 100%;
 	max-width: 800px;
 `;
 
-export const HeroImage = styled(Image)`
+const HeroImage = styled(Image)`
 	${({ theme }) => css`
 		display: none;
 		@media screen and (${theme.breakpoints.medium}) {
@@ -194,9 +194,7 @@ export const HeroImage = styled(Image)`
 	`}
 `;
 
-export const BenefitsArticle = styled(CenteredArticle)``;
-
-export const BenefitsSection = styled(SubInfoSection)`
+const BenefitsSection = styled(SubInfoSection)`
 	${({ theme }) => css`
 		order: 0;
 		@media screen and (${theme.breakpoints.medium}) {
@@ -211,7 +209,7 @@ const BenefitsTitle = styled(Subtitle)`
 	`}
 `;
 
-export const BenefitsImage = styled(Image)`
+const BenefitsImage = styled(Image)`
 	${({ theme }) => css`
 		flex: 1;
 		height: 100%;
@@ -261,7 +259,7 @@ const SpecsPreview = styled.section`
 	`}
 `;
 
-export const FeaturesImage = styled(Image)`
+const FeaturesImage = styled(Image)`
 	${({ theme }) => css`
 		flex: 1;
 		height: 100%;
