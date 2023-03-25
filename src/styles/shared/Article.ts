@@ -6,6 +6,7 @@ export const Article = styled.article`
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		gap: ${theme.spaces[5]};
 	`}
 `;

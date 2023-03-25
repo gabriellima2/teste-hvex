@@ -43,6 +43,8 @@ export default function Home() {
 						alt="Imagem do produto 1"
 						width={100}
 						height={100}
+						quality={100}
+						unoptimized
 					/>
 				</S.HeroArticle>
 			</AppLayout>

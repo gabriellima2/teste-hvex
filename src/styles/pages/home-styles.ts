@@ -19,6 +19,7 @@ export const HeroSection = styled.section`
 		flex-direction: column;
 		align-items: flex-start;
 		gap: ${theme.spaces[15]};
+		flex: 1;
 	`}
 `;
 
@@ -40,12 +41,11 @@ export const HeroImage = styled(Image)`
 	${({ theme }) => css`
 		display: none;
 		@media screen and (${theme.breakpoints.medium}) {
-			max-width: 390px;
-			max-height: 500px;
+			flex: 1;
+			max-width: 360px;
 			display: block;
-			width: 100%;
 			height: 100%;
-			object-fit: "contain";
+			max-height: 540px;
 		}
 	`}
 `;
