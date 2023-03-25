@@ -3,10 +3,11 @@ import styled, { css, CSSProperties } from "styled-components";
 type CenterProps = Pick<CSSProperties, "flexDirection">;
 
 export const Center = styled.div<CenterProps>`
-	${(props) => css`
+	${({ theme, flexDirection }) => css`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		flex-direction: ${props.flexDirection};
+		flex-direction: ${flexDirection};
+		gap: ${theme.spaces[14]};
 	`}
 `;

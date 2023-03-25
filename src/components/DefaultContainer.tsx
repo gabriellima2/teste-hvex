@@ -10,8 +10,10 @@ type DefaultContainerProps = Pick<CSSProperties, "flexDirection"> & {
 export const DefaultContainer = (props: DefaultContainerProps) => {
 	const { children, flexDirection } = props;
 	return (
-		<Center flexDirection={flexDirection || "column"}>
-			<Content>{children}</Content>
+		<Center flexDirection="column">
+			<Content>
+				<Center flexDirection={flexDirection ?? "column"}>{children}</Center>
+			</Content>
 		</Center>
 	);
 };

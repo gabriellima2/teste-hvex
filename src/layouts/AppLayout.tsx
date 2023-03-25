@@ -1,4 +1,4 @@
-import { DefaultContainer, Header } from "@/components";
+import { Header } from "@/components";
 
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
@@ -10,9 +10,7 @@ export const AppLayout = (props: AppLayoutProps) => {
 	return (
 		<>
 			<Header anchors={anchors} />
-			<main>
-				<DefaultContainer>{children}</DefaultContainer>
-			</main>
+			<main>{children}</main>
 			<footer></footer>
 		</>
 	);
