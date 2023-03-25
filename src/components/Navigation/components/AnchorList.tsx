@@ -46,7 +46,11 @@ type AnchorProps = {
 	isCurrent?: boolean;
 };
 
-const AnchorListItem = styled.li``;
+const AnchorListItem = styled.li`
+	${({ theme }) => css`
+		font-size: ${theme.fontSizes.x_small};
+	`}
+`;
 
 const Anchor = styled.a<AnchorProps>`
 	${({ theme, ...props }) => css`
