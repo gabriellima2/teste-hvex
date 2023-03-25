@@ -24,10 +24,6 @@
 		"prettier"
 	],
 	"rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
         "linebreak-style": [
             "error",
             "unix"
@@ -40,7 +36,8 @@
             "error",
             "always"
         ],
-    "prettier/prettier": "error",
+		"indent" :"off",
+		"prettier/prettier": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/display-name": "off",
