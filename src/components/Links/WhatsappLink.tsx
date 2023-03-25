@@ -22,6 +22,10 @@ const Link = styled(BaseLink)`
 		bottom: ${theme.spaces[15]};
 		right: ${theme.spaces[5]};
 		border-radius: 100%;
+		&:hover,
+		&:focus {
+			color: ${theme.colors.brand.main};
+		}
 	`}
 `;
 
