@@ -6,11 +6,14 @@ import { SubInfoSection } from "../shared/SubInfoSection";
 
 export const HeroArticle = styled(Article)`
 	${({ theme }) => css`
-		height: 80vh;
 		min-height: 500px;
-		padding-top: ${theme.spaces[4]};
+		padding: ${theme.spaces[4]} 0px;
 		@media screen and (${theme.breakpoints.default}) {
+			height: 75vh;
 			min-height: 700px;
+		}
+		@media screen and (min-height: 700px) {
+			min-height: 650px;
 		}
 	`}
 `;
@@ -19,6 +22,7 @@ export const HeroSection = styled.section`
 	${({ theme }) => css`
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		align-items: flex-start;
 		gap: ${theme.spaces[15]};
 		flex: 1;
