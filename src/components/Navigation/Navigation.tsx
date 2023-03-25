@@ -58,9 +58,9 @@ export const Navigation = (props: NavigationProps) => {
 					<Anchors>
 						<AnchorList anchors={anchors} />
 						<AnchorListItem>
-							<BaseLink title="Comprar" href="#" onlyBorder>
+							<BuyNowLink title="Comprar" href="#" hasBorder>
 								Comprar agora
-							</BaseLink>
+							</BuyNowLink>
 						</AnchorListItem>
 					</Anchors>
 				</Nav>
@@ -115,3 +115,9 @@ const Anchors = styled.ul`
 `;
 
 const AnchorListItem = styled.li``;
+
+const BuyNowLink = styled(BaseLink)`
+	${({ theme }) => css`
+		font-size: ${theme.fontSizes.x_small};
+	`}
+`;

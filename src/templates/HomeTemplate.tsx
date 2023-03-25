@@ -37,9 +37,7 @@ export const HomeTemplate = () => {
 								ativos e aferindo perdas técnicas e não técnicas.
 							</Paragraph>
 						</GroupText>
-						<BaseLink href="#" onlyBorder={false}>
-							Quero mais informações
-						</BaseLink>
+						<BaseLink href="#">Quero mais informações</BaseLink>
 					</HeroSection>
 					<HeroImage
 						src="/image1.png"

@@ -1,12 +1,11 @@
-import Link from "next/link";
 import styled, { css } from "styled-components";
 
 type BaseLinkProps = {
-	onlyBorder?: boolean;
+	hasBorder?: boolean;
 };
 
-export const BaseLink = styled(Link)<BaseLinkProps>`
-	${({ theme, onlyBorder = false }) => css`
+export const BaseLink = styled.a<BaseLinkProps>`
+	${({ theme, hasBorder = false }) => css`
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -16,12 +15,12 @@ export const BaseLink = styled(Link)<BaseLinkProps>`
 		padding: 14px ${theme.spaces[5]};
 		cursor: pointer;
 		border-radius: 5px;
-		font-weight: ${onlyBorder ? 400 : 500};
-		background-color: ${onlyBorder ? "none" : theme.colors.brand.main};
+		font-weight: ${hasBorder ? 400 : 500};
+		background-color: ${hasBorder ? "none" : theme.colors.brand.main};
 		transition: background 0.2s ease;
 		&:hover,
 		&:focus {
-			background: ${onlyBorder ? theme.colors.brand.main : "none"};
+			background: ${hasBorder ? theme.colors.brand.main : "none"};
 		}
 	`}
 `;
