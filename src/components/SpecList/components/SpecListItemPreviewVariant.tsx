@@ -6,10 +6,12 @@ import styled, { css } from "styled-components";
 export const SpecListItemPreviewVariant = (props: ISpec) => {
 	const { title, image } = props;
 	return (
-		<Card>
-			<Image {...image} width={100} height={100} />
-			<Title>{title}</Title>
-		</Card>
+		<li>
+			<Card>
+				<Image {...image} width={100} height={100} />
+				<Title>{title}</Title>
+			</Card>
+		</li>
 	);
 };
 

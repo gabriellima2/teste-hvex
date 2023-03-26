@@ -282,7 +282,7 @@ const SpecPreviewTitle = styled.h1`
 	`}
 `;
 
-const SpecsPreview = styled.section`
+const SpecsPreview = styled.ul`
 	${({ theme }) => css`
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
