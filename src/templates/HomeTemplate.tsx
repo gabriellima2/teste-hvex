@@ -59,6 +59,7 @@ export const HomeTemplate = () => {
 						height={100}
 						quality={100}
 						unoptimized
+						priority
 					/>
 				</HeroArticle>
 			</DefaultContainer>
@@ -148,6 +149,7 @@ export const HomeTemplate = () => {
 							height={100}
 							quality={100}
 							unoptimized
+							priority
 						/>
 					</SpecsFullArticle>
 				</DefaultContainer>

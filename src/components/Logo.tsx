@@ -9,6 +9,7 @@ export const Logo = () => (
 			alt="Logo escrito HVEX com uma cor metálica"
 			width={123}
 			height={57}
+			priority
 		/>
 	</Link>
 );
