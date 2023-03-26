@@ -122,9 +122,9 @@ export const HomeTemplate = () => {
 								<SpecsFullGroupTitle>
 									<SpecsFullTitle>Omni trafo</SpecsFullTitle>
 									<Line />
-									<Subtitle>
+									<SpecsFullSubtitle>
 										Monitoramento inteligente de transformadores de distribuição
-									</Subtitle>
+									</SpecsFullSubtitle>
 								</SpecsFullGroupTitle>
 								<Paragraph secondaryColor>
 									O Omni trafo é uma solução consolidada para monitoramento de
@@ -278,6 +278,14 @@ const SpecPreviewTitle = styled.h1`
 		margin-bottom: ${theme.spaces[13]};
 		@media screen and (${theme.breakpoints.default}) {
 			font-size: ${theme.fontSizes.large};
+		}
+	`}
+`;
+
+const SpecsFullSubtitle = styled(Subtitle)`
+	${({ theme }) => css`
+		@media screen and (${theme.breakpoints.default}) {
+			max-width: 505px;
 		}
 	`}
 `;
