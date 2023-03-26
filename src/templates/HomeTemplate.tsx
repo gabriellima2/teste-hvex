@@ -173,6 +173,19 @@ export const HomeTemplate = () => {
 					</CenteredArticle>
 				</DefaultContainer>
 			</WhiteBgColor>
+
+			<DefaultContainer>
+				<LearnMoreArticle>
+					<LearnMoreTitle>
+						Tenha Informações em tempo real das condições dos ativos e com o
+						monitoramento inteligente
+					</LearnMoreTitle>
+					<Line />
+					<LearnMoreLink href="#" hasBorder>
+						Falar com um consultor
+					</LearnMoreLink>
+				</LearnMoreArticle>
+			</DefaultContainer>
 		</AppLayout>
 	);
 };
@@ -377,6 +390,37 @@ const FeaturesImage = styled(Image)`
 		@media screen and (${theme.breakpoints.medium}) {
 			max-width: 630px;
 			max-height: 630px;
+		}
+	`}
+`;
+
+const LearnMoreArticle = styled(Article)`
+	${({ theme }) => css`
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: ${theme.spaces[7]};
+		padding: ${theme.spaces[7]} 0px;
+	`}
+`;
+
+const LearnMoreTitle = styled(Subtitle)`
+	${({ theme }) => css`
+		text-align: center;
+		color: ${theme.colors.font.light};
+		@media screen and (${theme.breakpoints.medium}) {
+			max-width: 570px;
+		}
+	`}
+`;
+
+const LearnMoreLink = styled(BaseLink)`
+	${({ theme }) => css`
+		color: ${theme.colors.brand.main};
+
+		&:hover,
+		&:focus {
+			color: ${theme.colors.font.light};
 		}
 	`}
 `;
