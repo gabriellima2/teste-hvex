@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 
+import { Center } from "@/components/common";
 import type { ISpec } from "@/interfaces/ISpec";
-import { Center } from "@/styles";
 
 export const SpecListItemFullVariant = (props: ISpec) => {
 	const { title, image } = props;

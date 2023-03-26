@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { Logo, Navigation } from ".";
-import { Content } from "@/styles";
+import { Content } from "./common";
 
 type HeaderProps = Pick<Parameters<typeof Navigation>[0], "anchors">;
 

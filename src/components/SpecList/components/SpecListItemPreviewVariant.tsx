@@ -1,7 +1,8 @@
-import type { ISpec } from "@/interfaces/ISpec";
 import NextImage from "next/image";
-import { Card } from "@/styles";
 import styled, { css } from "styled-components";
+
+import { Card } from "@/components/common";
+import type { ISpec } from "@/interfaces/ISpec";
 
 export const SpecListItemPreviewVariant = (props: ISpec) => {
 	const { title, image } = props;

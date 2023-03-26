@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
 
-import { BaseLink } from "@/styles";
+import { BaseLink } from "./common";
 import type { ISocialNetwork } from "@/interfaces/ISocialNetwork";
 
 type SocialNetworksListProps = {

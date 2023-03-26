@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { Logo, SocialNetworksList, ContactList } from "./";
-import { Content, Paragraph, Subtitle } from "@/styles";
+import { Content, Title, Paragraph } from "./common";
 
 import { socialNetworks, contacts } from "@/assets";
 
@@ -11,20 +11,20 @@ export const Footer = () => (
 			<Logo />
 			<InfoGroups>
 				<Group>
-					<Title isAccent>Endereço</Title>
+					<GroupTitle>Endereço</GroupTitle>
 					<Address>
 						R. Ismael Pinto de Noronha, 86 - Nossa Sra. de Fatima, Itajubá - MG,
 						37502-508
 					</Address>
 				</Group>
 				<Group>
-					<Title isAccent>Contato</Title>
+					<GroupTitle>Contato</GroupTitle>
 					<Contacts>
 						<ContactList contacts={contacts} />
 					</Contacts>
 				</Group>
 				<Group>
-					<Title isAccent>Confira nossa redes</Title>
+					<GroupTitle>Confira nossa redes</GroupTitle>
 					<SocialNetworks>
 						<SocialNetworksList socialNetworks={socialNetworks} />
 					</SocialNetworks>
@@ -81,11 +81,13 @@ const InfoGroups = styled.section`
 
 const Group = styled.div``;
 
-const Title = styled(Subtitle)`
+const GroupTitle = styled(Title)`
 	${({ theme }) => css`
+		color: ${theme.colors.brand.secondary};
 		font-size: ${theme.fontSizes.small};
 		margin-bottom: ${theme.spaces[8]};
 		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.small};
 			margin-bottom: ${theme.spaces[10]};
 		}
 	`}

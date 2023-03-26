@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import type { CSSProperties } from "styled-components";
 
-import { Center, Content } from "@/styles";
+import { Center, Content } from "..";
 
 type DefaultContainerProps = Pick<CSSProperties, "flexDirection"> & {
 	children: ReactNode;

@@ -1,7 +1,7 @@
 import { BsWhatsapp } from "react-icons/bs";
 import styled, { css } from "styled-components";
 
-import { BaseLink } from "@/styles";
+import { BaseLink } from "../common";
 
 export const WhatsappLink = () => (
 	<Link href="#">

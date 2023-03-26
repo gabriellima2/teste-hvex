@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { Accordion } from "./Accordion";
+import { Accordion } from "./common";
 import type { IFAQ } from "@/interfaces/IFAQ";
 
 type FrequentlyAskedQuestionsProps = {

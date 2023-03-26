@@ -1,7 +1,7 @@
 import { FaChevronDown } from "react-icons/fa";
 import styled, { css } from "styled-components";
 
-import { Center } from "@/styles";
+import { Center } from "@/components/common";
 
 type AccordionButtonProps = {
 	id: string;

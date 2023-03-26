@@ -7,10 +7,6 @@ import {
 	MoreInfoList,
 	SpecList,
 	FrequentlyAskedQuestions,
-} from "@/components";
-import { AppLayout } from "@/layouts/AppLayout";
-
-import {
 	BaseLink,
 	Paragraph,
 	Subtitle,
@@ -19,7 +15,9 @@ import {
 	SubInfoSection,
 	Article,
 	Line,
-} from "@/styles";
+	Title,
+} from "@/components";
+import { AppLayout } from "@/layouts/AppLayout";
 
 import {
 	specsPreview,
@@ -38,7 +36,7 @@ export const HomeTemplate = () => {
 				<HeroArticle>
 					<HeroSection>
 						<GroupText>
-							<HeroTitle>
+							<HeroTitle isAccent>
 								Tenha Informações em tempo real das condições dos ativos e com o
 								monitoramento inteligente
 							</HeroTitle>
@@ -156,10 +154,10 @@ export const HomeTemplate = () => {
 					<CenteredArticle>
 						<SubInfoSection>
 							<GroupText>
-								<Subtitle>
+								<Title contrast>
 									Desenvolvido para melhorar a performance dos ativos de
 									distribuição
-								</Subtitle>
+								</Title>
 								<Line />
 							</GroupText>
 							<MoreInfoList infos={features} />
@@ -192,7 +190,7 @@ export const HomeTemplate = () => {
 			<WhiteBgColor>
 				<DefaultContainer>
 					<FAQArticle>
-						<Subtitle>Perguntas Frequentes</Subtitle>
+						<Title contrast>Perguntas Frequentes</Title>
 						<FrequentlyAskedQuestions faqs={faqs} />
 					</FAQArticle>
 				</DefaultContainer>
@@ -238,7 +236,7 @@ const GroupText = styled.div`
 	`}
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled(Title)`
 	width: 100%;
 	max-width: 800px;
 `;
@@ -265,7 +263,7 @@ const BenefitsSection = styled(SubInfoSection)`
 	`}
 `;
 
-const BenefitsTitle = styled(Subtitle)`
+const BenefitsTitle = styled(Title)`
 	${({ theme }) => css`
 		color: ${theme.colors.font.util};
 	`}
@@ -424,10 +422,9 @@ const LearnMoreArticle = styled(Article)`
 	`}
 `;
 
-const LearnMoreTitle = styled(Subtitle)`
+const LearnMoreTitle = styled(Title)`
 	${({ theme }) => css`
 		text-align: center;
-		color: ${theme.colors.font.light};
 		@media screen and (${theme.breakpoints.medium}) {
 			max-width: 570px;
 		}

@@ -8,9 +8,9 @@ import {
 } from "@/hooks";
 
 import { AnchorList, NavigationButton } from "./components";
-import { Overlay } from "../Overlay";
+import { BaseLink, Overlay } from "@/components/common";
 
-import { WINDOW_WIDTH_WHEN_NOT_MOBILE, BaseLink } from "@/styles";
+import { WINDOW_WIDTH_WHEN_NOT_MOBILE } from "@/styles";
 
 type NavigationProps = Pick<Parameters<typeof AnchorList>[0], "anchors">;
 
