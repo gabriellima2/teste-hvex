@@ -21,12 +21,14 @@ import {
 	Line,
 } from "@/styles";
 
-import { specsPreview } from "@/assets/specs-preview";
-import { specsFull } from "@/assets/specs-full";
-import { features } from "@/assets/features";
-import { benefits } from "@/assets/benefits";
-import { anchors } from "@/assets/anchors";
-import { faqs } from "@/assets/faqs";
+import {
+	specsPreview,
+	faqs,
+	specsFull,
+	features,
+	benefits,
+	anchors,
+} from "@/assets";
 
 export const HomeTemplate = () => {
 	return (
@@ -116,7 +118,7 @@ export const HomeTemplate = () => {
 				</SpecPreviewArticle>
 			</DefaultContainer>
 
-			<WhiteBgColor>
+			<Details>
 				<DefaultContainer flexDirection="row">
 					<SpecsFullArticle>
 						<SpecsFullSection>
@@ -149,9 +151,7 @@ export const HomeTemplate = () => {
 						/>
 					</SpecsFullArticle>
 				</DefaultContainer>
-			</WhiteBgColor>
 
-			<WhiteBgColor>
 				<DefaultContainer flexDirection="row">
 					<CenteredArticle>
 						<SubInfoSection>
@@ -174,7 +174,7 @@ export const HomeTemplate = () => {
 						/>
 					</CenteredArticle>
 				</DefaultContainer>
-			</WhiteBgColor>
+			</Details>
 
 			<DefaultContainer>
 				<LearnMoreArticle>
@@ -300,9 +300,18 @@ const SpecPreviewTitle = styled.h1`
 	${({ theme }) => css`
 		font-size: ${theme.fontSizes.normal};
 		margin-bottom: ${theme.spaces[13]};
+		text-transform: capitalize;
 		@media screen and (${theme.breakpoints.default}) {
 			font-size: ${theme.fontSizes.large};
 		}
+	`}
+`;
+
+const Details = styled(WhiteBgColor)`
+	${({ theme }) => css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.spaces[15]};
 	`}
 `;
 

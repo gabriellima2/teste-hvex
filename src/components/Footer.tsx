@@ -3,8 +3,7 @@ import styled, { css } from "styled-components";
 import { Logo, SocialNetworksList, ContactList } from "./";
 import { Content, Paragraph, Subtitle } from "@/styles";
 
-import { socialNetworks } from "@/assets/social-networks";
-import { contacts } from "@/assets/contacts";
+import { socialNetworks, contacts } from "@/assets";
 
 export const Footer = () => (
 	<Container>
