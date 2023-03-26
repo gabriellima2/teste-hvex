@@ -21,6 +21,7 @@ const Link = styled(BaseLink)`
 		position: fixed;
 		bottom: ${theme.spaces[15]};
 		right: ${theme.spaces[5]};
+		z-index: 10000;
 		border-radius: 100%;
 		&:hover,
 		&:focus {
