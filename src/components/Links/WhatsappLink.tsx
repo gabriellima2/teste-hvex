@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { BaseLink } from "../common";
 
 export const WhatsappLink = () => (
-	<Link href="#">
+	<Link href="#" title="Entrar em contato via Whatsaspp">
 		<Icon>
 			<BsWhatsapp />
 		</Icon>

@@ -48,7 +48,9 @@ export const HomeTemplate = () => {
 								ativos e aferindo perdas técnicas e não técnicas.
 							</Paragraph>
 						</GroupText>
-						<BaseLink href="#">Quero mais informações</BaseLink>
+						<BaseLink href="#" title="Mais informações">
+							Quero mais informações
+						</BaseLink>
 					</HeroSection>
 					<HeroImage
 						src="/image1.png"
@@ -181,7 +183,11 @@ export const HomeTemplate = () => {
 						performance de seus ativos?
 					</LearnMoreTitle>
 					<Line />
-					<LearnMoreLink href="#" hasBorder>
+					<LearnMoreLink
+						href="#"
+						hasBorder
+						title="Para saber mais, fale com um consultor"
+					>
 						Falar com um consultor
 					</LearnMoreLink>
 				</LearnMoreArticle>
