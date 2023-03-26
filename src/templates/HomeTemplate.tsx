@@ -6,6 +6,7 @@ import {
 	WhatsappLink,
 	MoreInfoList,
 	SpecList,
+	FrequentlyAskedQuestions,
 } from "@/components";
 import { AppLayout } from "@/layouts/AppLayout";
 
@@ -20,11 +21,12 @@ import {
 	Line,
 } from "@/styles";
 
-import { features } from "@/assets/features";
 import { specsPreview } from "@/assets/specs-preview";
+import { specsFull } from "@/assets/specs-full";
+import { features } from "@/assets/features";
 import { benefits } from "@/assets/benefits";
 import { anchors } from "@/assets/anchors";
-import { specsFull } from "@/assets/specs-full";
+import { faqs } from "@/assets/faqs";
 
 export const HomeTemplate = () => {
 	return (
@@ -186,6 +188,15 @@ export const HomeTemplate = () => {
 					</LearnMoreLink>
 				</LearnMoreArticle>
 			</DefaultContainer>
+
+			<WhiteBgColor>
+				<DefaultContainer>
+					<FAQArticle>
+						<Subtitle>Perguntas Frequentes</Subtitle>
+						<FrequentlyAskedQuestions faqs={faqs} />
+					</FAQArticle>
+				</DefaultContainer>
+			</WhiteBgColor>
 		</AppLayout>
 	);
 };
@@ -422,5 +433,12 @@ const LearnMoreLink = styled(BaseLink)`
 		&:focus {
 			color: ${theme.colors.font.light};
 		}
+	`}
+`;
+
+const FAQArticle = styled(Article)`
+	${({ theme }) => css`
+		flex-direction: column;
+		gap: ${theme.spaces[15]};
 	`}
 `;

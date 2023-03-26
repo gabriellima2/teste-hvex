@@ -5,3 +5,5 @@ export * from "./DefaultContainer";
 export * from "./MoreInfoList";
 export * from "./Links/WhatsappLink";
 export * from "./SpecList";
+export * from "./Accordion";
+export * from "./FrequentlyAskedQuestions";
