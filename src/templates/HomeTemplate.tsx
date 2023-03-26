@@ -89,6 +89,8 @@ export const HomeTemplate = () => {
 							height={100}
 							quality={100}
 							sizes="100%"
+							placeholder="blur"
+							blurDataURL="/cover.png"
 						/>
 					</CenteredArticle>
 				</DefaultContainer>
@@ -150,6 +152,8 @@ export const HomeTemplate = () => {
 							quality={100}
 							sizes="100%"
 							priority
+							placeholder="blur"
+							blurDataURL="/cover.png"
 						/>
 					</SpecsFullArticle>
 				</DefaultContainer>
@@ -173,6 +177,8 @@ export const HomeTemplate = () => {
 							height={100}
 							quality={100}
 							sizes="100%"
+							placeholder="blur"
+							blurDataURL="/cover.png"
 						/>
 					</CenteredArticle>
 				</DefaultContainer>
