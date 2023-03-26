@@ -48,5 +48,9 @@ ${({ theme }) => css`
 		text-decoration: none;
 		color: ${theme.colors.font.light};
 	}
+	button,
+	a {
+		font-family: ${theme.fontFamily.main};
+	}
 `}
 `;
