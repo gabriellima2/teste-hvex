@@ -1,5 +1,6 @@
 export * from "./Logo";
 export * from "./Header";
+export * from "./Footer";
 export * from "./Navigation";
 export * from "./DefaultContainer";
 export * from "./MoreInfoList";
@@ -7,3 +8,5 @@ export * from "./Links/WhatsappLink";
 export * from "./SpecList";
 export * from "./Accordion";
 export * from "./FrequentlyAskedQuestions";
+export * from "./SocialNetworksList";
+export * from "./ContactList";

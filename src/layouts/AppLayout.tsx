@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Header, Footer } from "@/components";
 
 import type { LayoutDefaultProps } from "./@types/LayoutDefaultProps";
 
@@ -11,7 +11,7 @@ export const AppLayout = (props: AppLayoutProps) => {
 		<>
 			<Header anchors={anchors} />
 			<main>{children}</main>
-			<footer></footer>
+			<Footer />
 		</>
 	);
 };
