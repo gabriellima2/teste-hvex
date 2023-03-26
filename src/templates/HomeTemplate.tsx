@@ -24,6 +24,7 @@ import { features } from "@/assets/features";
 import { specsPreview } from "@/assets/specs-preview";
 import { benefits } from "@/assets/benefits";
 import { anchors } from "@/assets/anchors";
+import { specsFull } from "@/assets/specs-full";
 
 export const HomeTemplate = () => {
 	return (
@@ -91,13 +92,13 @@ export const HomeTemplate = () => {
 			<DefaultContainer>
 				<SpecPreviewArticle>
 					<GroupText>
-						<SpecPreviewTitleGroup>
+						<GroupTitle>
 							<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
 							<Subtitle isAccent>
 								É o dispositivo capaz de integrar os transformadores as redes
 								inteligentes
 							</Subtitle>
-						</SpecPreviewTitleGroup>
+						</GroupTitle>
 
 						<Paragraph>
 							O Omni Trafo envia informações em tempo real, permitindo a
@@ -112,6 +113,41 @@ export const HomeTemplate = () => {
 					</SpecsPreview>
 				</SpecPreviewArticle>
 			</DefaultContainer>
+
+			<WhiteBgColor>
+				<DefaultContainer flexDirection="row">
+					<SpecsFullArticle>
+						<SpecsFullSection>
+							<GroupText>
+								<SpecsFullGroupTitle>
+									<SpecsFullTitle>Omni trafo</SpecsFullTitle>
+									<Line />
+									<Subtitle>
+										Monitoramento inteligente de transformadores de distribuição
+									</Subtitle>
+								</SpecsFullGroupTitle>
+								<Paragraph secondaryColor>
+									O Omni trafo é uma solução consolidada para monitoramento de
+									ativos. Através deste equipamento, informações importantes da
+									rede são enviadas em tempo real, permitindo assim a
+									administração remota de dados como:
+								</Paragraph>
+							</GroupText>
+							<SpecsFull>
+								<SpecList specs={specsFull} variants="full" />
+							</SpecsFull>
+						</SpecsFullSection>
+						<SpecsFullImage
+							src="/image1.png"
+							alt="Imagem do Omni Transformer"
+							width={100}
+							height={100}
+							quality={100}
+							unoptimized
+						/>
+					</SpecsFullArticle>
+				</DefaultContainer>
+			</WhiteBgColor>
 
 			<WhiteBgColor>
 				<DefaultContainer flexDirection="row">
@@ -165,6 +201,8 @@ const HeroSection = styled.section`
 		flex: 1;
 	`}
 `;
+
+const GroupTitle = styled.div``;
 
 const GroupText = styled.div`
 	${({ theme }) => css`
@@ -234,8 +272,6 @@ const SpecPreviewArticle = styled(Article)`
 	`}
 `;
 
-const SpecPreviewTitleGroup = styled.div``;
-
 const SpecPreviewTitle = styled.h1`
 	${({ theme }) => css`
 		font-size: ${theme.fontSizes.normal};
@@ -257,6 +293,70 @@ const SpecsPreview = styled.section`
 			grid-template-rows: repeat(2, 1fr);
 		}
 	`}
+`;
+
+const SpecsFullArticle = styled(Article)`
+	${({ theme }) => css`
+		flex-direction: column;
+		gap: ${theme.spaces[15]};
+		@media screen and (${theme.breakpoints.medium}) {
+			flex-direction: row;
+		}
+	`}
+`;
+
+const SpecsFullSection = styled(SubInfoSection)`
+	align-items: center;
+	${({ theme }) => css`
+		@media screen and (${theme.breakpoints.medium}) {
+			align-items: flex-start;
+			order: 1;
+		}
+	`}
+`;
+
+const SpecsFullImage = styled(HeroImage)`
+	${({ theme }) => css`
+		display: block;
+		flex: 1;
+		height: 100%;
+		width: 100%;
+		max-width: 350px;
+		max-height: 100%;
+		transform: scaleX(-1);
+		@media screen and (${theme.breakpoints.medium}) {
+			max-width: 360px;
+			max-height: 540px;
+		}
+	`}
+`;
+
+const SpecsFullGroupTitle = styled(GroupTitle)`
+	${({ theme }) => css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.spaces[6]};
+	`}
+`;
+
+const SpecsFullTitle = styled.h1`
+	${({ theme }) => css`
+		color: ${theme.colors.utils.contrast};
+		text-transform: uppercase;
+		font-size: ${theme.fontSizes.normal};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.large};
+		}
+	`}
+`;
+
+const SpecsFull = styled.ul`
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: fit-content;
+	max-width: 680px;
+	gap: 32px;
 `;
 
 const FeaturesImage = styled(Image)`
