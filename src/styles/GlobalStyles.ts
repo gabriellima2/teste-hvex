@@ -16,6 +16,18 @@ ${({ theme }) => css`
 		color: ${theme.colors.font.light};
 		background: ${theme.colors.main};
 	}
+	*::-webkit-scrollbar {
+		width: 6px;
+		height: 4px;
+	}
+
+	*::-webkit-scrollbar-track {
+		background: ${theme.colors.utils.light};
+	}
+
+	*::-webkit-scrollbar-thumb {
+		background: ${theme.colors.main};
+	}
 	h1 {
 		font-weight: 700;
 		font-size: ${theme.fontSizes.large};
