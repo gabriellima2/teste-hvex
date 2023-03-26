@@ -177,8 +177,8 @@ export const HomeTemplate = () => {
 			<DefaultContainer>
 				<LearnMoreArticle>
 					<LearnMoreTitle>
-						Tenha Informações em tempo real das condições dos ativos e com o
-						monitoramento inteligente
+						Quer saber mais sobre como podemos te ajudar a melhorar a
+						performance de seus ativos?
 					</LearnMoreTitle>
 					<Line />
 					<LearnMoreLink href="#" hasBorder>
