@@ -88,7 +88,7 @@ export const HomeTemplate = () => {
 							width={100}
 							height={100}
 							quality={100}
-							unoptimized
+							sizes="100%"
 						/>
 					</CenteredArticle>
 				</DefaultContainer>
@@ -148,7 +148,7 @@ export const HomeTemplate = () => {
 							width={100}
 							height={100}
 							quality={100}
-							unoptimized
+							sizes="100%"
 							priority
 						/>
 					</SpecsFullArticle>
@@ -172,7 +172,7 @@ export const HomeTemplate = () => {
 							width={100}
 							height={100}
 							quality={100}
-							unoptimized
+							sizes="100%"
 						/>
 					</CenteredArticle>
 				</DefaultContainer>
