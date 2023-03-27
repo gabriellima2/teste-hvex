@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 
-import { Accordion } from "./common";
+import { Accordion } from "../common";
 
 import { moveAnimation } from "@/functions/move-animation";
 import type { IFAQ } from "@/interfaces/IFAQ";
