@@ -1,5 +1,4 @@
-import Link from "next/link";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import type { IContact } from "@/interfaces/IContact";
 import { BaseLink } from "./common";
