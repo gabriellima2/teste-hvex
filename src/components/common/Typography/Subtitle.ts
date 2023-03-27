@@ -16,6 +16,6 @@ const modifiers: Modifiers<SubtitleVariants> = {
 export const Subtitle = styled.h2<SubtitleProps>`
 	${({ theme, accent }) => css`
 		color: ${theme.colors.utils.accent};
-		${accent && modifiers.accent(theme)}
+		${accent && modifiers.accent(theme)};
 	`}
 `;

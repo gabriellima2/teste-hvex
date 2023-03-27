@@ -84,8 +84,8 @@ const Group = styled.div``;
 const GroupTitle = styled(Title)`
 	${({ theme }) => css`
 		color: ${theme.colors.brand.secondary};
-		font-size: ${theme.fontSizes.small};
 		margin-bottom: ${theme.spaces[8]};
+		font-size: ${theme.fontSizes.small};
 		@media screen and (${theme.breakpoints.default}) {
 			margin-bottom: ${theme.spaces[10]};
 			font-size: ${theme.fontSizes.small};

@@ -67,8 +67,8 @@ export const BaseLink = styled.a<BaseLinkProps>`
 			background: none;
 		}
 
-		${border && modifiers.border(theme)}
-		${rounded && modifiers.rounded(theme)}
-		${text && modifiers.text(theme)}
+		${border && modifiers.border(theme)};
+		${rounded && modifiers.rounded(theme)};
+		${text && modifiers.text(theme)};
 	`}
 `;

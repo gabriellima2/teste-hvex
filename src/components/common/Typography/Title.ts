@@ -27,7 +27,7 @@ export const Title = styled.h1<TitleProps>`
 		@media screen and (${theme.breakpoints.default}) {
 			font-size: ${theme.fontSizes.large};
 		}
-		${contrast && modifiers.contrast(theme)}
-		${display && modifiers.display(theme)}
+		${contrast && modifiers.contrast(theme)};
+		${display && modifiers.display(theme)};
 	`}
 `;
