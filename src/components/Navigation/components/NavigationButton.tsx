@@ -1,16 +1,17 @@
+import type { ReactNode } from "react";
 import styled, { css } from "styled-components";
 
 type NavigationButtonProps = {
 	title: string;
-	display: string;
+	children: ReactNode;
 	handleClick: () => void;
 };
 
 export const NavigationButton = (props: NavigationButtonProps) => {
-	const { display, title, handleClick } = props;
+	const { children, title, handleClick } = props;
 	return (
 		<Button type="button" title={title} onClick={handleClick}>
-			{display}
+			{children}
 		</Button>
 	);
 };

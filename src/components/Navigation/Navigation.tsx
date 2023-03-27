@@ -37,7 +37,7 @@ export const Navigation = (props: NavigationProps) => {
 
 	return (
 		<>
-			<div
+			<Container
 				ref={ref}
 				onKeyDown={(e) => {
 					if (userDeviceIsMobile) return handleKeyDown(e);
@@ -46,8 +46,9 @@ export const Navigation = (props: NavigationProps) => {
 				<NavigationButton
 					title={`${isOpen ? "Fechar" : "Abrir"} menu de navegação`}
 					handleClick={isOpen ? handleDisable : handleActive}
-					display={isOpen ? "Fechar" : "Menu"}
-				/>
+				>
+					{isOpen ? "Fechar" : "Menu"}
+				</NavigationButton>
 
 				<Nav
 					isOpen={isOpen}
@@ -71,7 +72,7 @@ export const Navigation = (props: NavigationProps) => {
 						</AnchorListItem>
 					</Anchors>
 				</Nav>
-			</div>
+			</Container>
 			{isOpen && <Overlay handleClick={handleDisable} />}
 		</>
 	);
@@ -80,6 +81,8 @@ export const Navigation = (props: NavigationProps) => {
 type NavProps = {
 	isOpen: boolean;
 };
+
+const Container = styled.div``;
 
 const Nav = styled.nav<NavProps>`
 	${({ theme, ...props }) => css`
