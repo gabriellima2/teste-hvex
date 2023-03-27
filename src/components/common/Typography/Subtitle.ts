@@ -1,13 +1,21 @@
 import styled, { css } from "styled-components";
+import type { Modifiers } from "@/@types/Modifiers";
 
 type SubtitleProps = {
-	isAccent?: boolean;
+	accent?: boolean;
+};
+
+type SubtitleVariants = keyof Pick<SubtitleProps, "accent">;
+
+const modifiers: Modifiers<SubtitleVariants> = {
+	accent: (theme) => css`
+		color: ${theme.colors.brand.secondary};
+	`,
 };
 
 export const Subtitle = styled.h2<SubtitleProps>`
-	${({ theme, isAccent }) => css`
-		color: ${isAccent
-			? theme.colors.brand.secondary
-			: theme.colors.utils.accent};
+	${({ theme, accent }) => css`
+		color: ${theme.colors.utils.accent};
+		${accent && modifiers.accent(theme)}
 	`}
 `;

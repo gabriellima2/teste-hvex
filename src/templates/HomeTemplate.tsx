@@ -101,7 +101,7 @@ export const HomeTemplate = () => {
 					<GroupText>
 						<GroupTitle>
 							<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
-							<Subtitle isAccent>
+							<Subtitle accent>
 								É o dispositivo capaz de integrar os transformadores as redes
 								inteligentes
 							</Subtitle>
