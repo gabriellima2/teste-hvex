@@ -361,7 +361,7 @@ const SpecsFullImage = styled(HeroImage)`
 		flex: 1;
 		height: 100%;
 		width: 100%;
-		max-width: 350px;
+		max-width: 300px;
 		max-height: 100%;
 		transform: scaleX(-1);
 		@media screen and (${theme.breakpoints.medium}) {

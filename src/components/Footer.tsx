@@ -108,6 +108,10 @@ const SocialNetworks = styled.ul`
 		display: flex;
 		align-items: center;
 		gap: ${theme.spaces[6]};
+		flex-wrap: wrap;
+		@media screen and (${theme.breakpoints.default}) {
+			flex-wrap: nowrap;
+		}
 	`}
 `;
 
