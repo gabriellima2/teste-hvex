@@ -10,7 +10,7 @@ import {
 import { AnchorList, NavigationButton } from "./components";
 import { BaseLink, Overlay } from "@/components/common";
 
-import { WINDOW_WIDTH_WHEN_NOT_MOBILE } from "@/styles";
+import { WIDTHS_OF_DEVICES } from "@/constants/widths-of-devices";
 
 type NavigationProps = Pick<Parameters<typeof AnchorList>[0], "anchors">;
 
@@ -33,13 +33,14 @@ export const Navigation = (props: NavigationProps) => {
 		};
 	}, []);
 
+	const userDeviceIsMobile = windowWidth < WIDTHS_OF_DEVICES.medium;
+
 	return (
 		<>
 			<div
 				ref={ref}
 				onKeyDown={(e) => {
-					if (windowWidth < WINDOW_WIDTH_WHEN_NOT_MOBILE)
-						return handleKeyDown(e);
+					if (userDeviceIsMobile) return handleKeyDown(e);
 				}}
 			>
 				<NavigationButton
@@ -50,10 +51,8 @@ export const Navigation = (props: NavigationProps) => {
 
 				<Nav
 					isOpen={isOpen}
-					role={
-						windowWidth < WINDOW_WIDTH_WHEN_NOT_MOBILE ? "dialog" : undefined
-					}
-					aria-hidden={!isOpen && windowWidth < WINDOW_WIDTH_WHEN_NOT_MOBILE}
+					role={userDeviceIsMobile ? "dialog" : undefined}
+					aria-hidden={!isOpen && userDeviceIsMobile}
 				>
 					<Anchors>
 						<AnchorList anchors={anchors} />

@@ -1,6 +1,5 @@
 import { DefaultTheme } from "styled-components";
-
-export const WINDOW_WIDTH_WHEN_NOT_MOBILE = 1024;
+import { WIDTHS_OF_DEVICES } from "@/constants/widths-of-devices";
 
 export const theme: DefaultTheme = {
 	fontFamily: {
@@ -49,8 +48,11 @@ export const theme: DefaultTheme = {
 		15: "60px",
 	},
 	breakpoints: {
-		default: "(min-width: 767px)",
-		medium: `(min-width: ${WINDOW_WIDTH_WHEN_NOT_MOBILE}px)`,
-		large: "(max-width: 1024px && min-width: 1440px)",
+		default: `(min-width: ${WIDTHS_OF_DEVICES.default}px)`,
+		medium: `(min-width: ${WIDTHS_OF_DEVICES.medium}px)`,
+		large: `(
+			max-width: ${WIDTHS_OF_DEVICES.medium}px
+			&& min-width: ${WIDTHS_OF_DEVICES.large}px
+		)`,
 	},
 };
