@@ -27,6 +27,7 @@ const customJestConfig = {
 		".module.ts",
 		".mock.ts",
 		".next.ts",
+		"<rootDir>/src/components/common/(.*).ts"
 	],
   testEnvironment: 'jest-environment-jsdom',
 }
