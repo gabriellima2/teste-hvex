@@ -6,10 +6,11 @@ import type { IAnchor } from "@/interfaces/IAnchor";
 
 type AnchorListProps = {
 	anchors: IAnchor[];
+	handleDisableNavigation: () => void;
 };
 
 export const AnchorList = (props: AnchorListProps) => {
-	const { anchors } = props;
+	const { anchors, handleDisableNavigation } = props;
 	const { pathname } = useRouter();
 
 	const isCurrentPage = useCallback(
@@ -32,6 +33,7 @@ export const AnchorList = (props: AnchorListProps) => {
 							aria-disabled={isActive}
 							tabIndex={isActive ? -1 : 0}
 							isCurrent={isActive}
+							onClick={handleDisableNavigation}
 						>
 							{anchor.display}
 						</Anchor>

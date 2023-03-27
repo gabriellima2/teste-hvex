@@ -55,9 +55,17 @@ export const Navigation = (props: NavigationProps) => {
 					aria-hidden={!isOpen && userDeviceIsMobile}
 				>
 					<Anchors>
-						<AnchorList anchors={anchors} />
+						<AnchorList
+							anchors={anchors}
+							handleDisableNavigation={handleDisable}
+						/>
 						<AnchorListItem>
-							<BuyNowLink title="Comprar" href="#" border>
+							<BuyNowLink
+								title="Comprar"
+								href="#"
+								border
+								onClick={handleDisable}
+							>
 								Comprar agora
 							</BuyNowLink>
 						</AnchorListItem>
