@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Modifiers } from "@/@types/Modifiers";
+import type { Modifiers } from "@/@types/Modifiers";
 
 type TitleProps = {
 	contrast?: boolean;

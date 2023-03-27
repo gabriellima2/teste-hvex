@@ -7,9 +7,12 @@ type BaseLinkProps = {
 	text?: boolean;
 };
 
-type BaseLinkModifiers = Modifiers<
-	keyof Pick<BaseLinkProps, "border" | "rounded" | "text">
+type BaseLinkVariants = keyof Pick<
+	BaseLinkProps,
+	"border" | "rounded" | "text"
 >;
+
+type BaseLinkModifiers = Modifiers<BaseLinkVariants>;
 
 const modifiers: BaseLinkModifiers = {
 	border: (theme) => css`
