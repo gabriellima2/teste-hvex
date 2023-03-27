@@ -96,7 +96,7 @@ export const HomeTemplate = () => {
 			</WhiteBgColor>
 
 			<DefaultContainer>
-				<SpecPreviewArticle>
+				<SpecPreviewArticle withResponsiveSideContent>
 					<GroupText>
 						<GroupTitle>
 							<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
@@ -122,7 +122,7 @@ export const HomeTemplate = () => {
 
 			<Details>
 				<DefaultContainer flexDirection="row">
-					<SpecsFullArticle>
+					<SpecFullArticle withResponsiveSideContent>
 						<SpecsFullSection>
 							<GroupText>
 								<SpecsFullGroupTitle>
@@ -154,11 +154,11 @@ export const HomeTemplate = () => {
 							placeholder="blur"
 							blurDataURL="/cover.png"
 						/>
-					</SpecsFullArticle>
+					</SpecFullArticle>
 				</DefaultContainer>
 
 				<DefaultContainer flexDirection="row">
-					<Article center>
+					<Article withResponsiveSideContent center>
 						<SubInfoSection>
 							<GroupText>
 								<Title contrast>
@@ -299,11 +299,7 @@ const BenefitsImage = styled(Image)`
 const SpecPreviewArticle = styled(Article)`
 	${({ theme }) => css`
 		padding: ${theme.spaces[15]} 0px;
-		flex-direction: column;
 		gap: ${theme.spaces[14]};
-		@media screen and (${theme.breakpoints.medium}) {
-			flex-direction: row;
-		}
 	`}
 `;
 
@@ -326,6 +322,8 @@ const Details = styled(WhiteBgColor)`
 	`}
 `;
 
+const SpecFullArticle = styled(Article)``;
+
 const SpecsFullSubtitle = styled(Subtitle)`
 	${({ theme }) => css`
 		@media screen and (${theme.breakpoints.default}) {
@@ -343,16 +341,6 @@ const SpecsPreview = styled.ul`
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			grid-template-rows: repeat(2, 1fr);
-		}
-	`}
-`;
-
-const SpecsFullArticle = styled(Article)`
-	${({ theme }) => css`
-		flex-direction: column;
-		gap: ${theme.spaces[15]};
-		@media screen and (${theme.breakpoints.medium}) {
-			flex-direction: row;
 		}
 	`}
 `;

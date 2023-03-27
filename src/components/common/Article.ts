@@ -3,9 +3,13 @@ import type { Modifiers } from "@/@types/Modifiers";
 
 type ArticleProps = Pick<CSSProperties, "alignItems"> & {
 	center?: boolean;
+	withResponsiveSideContent?: boolean;
 };
 
-type ArticleVariants = keyof Pick<ArticleProps, "center">;
+type ArticleVariants = keyof Pick<
+	ArticleProps,
+	"center" | "withResponsiveSideContent"
+>;
 
 const modifiers: Modifiers<ArticleVariants> = {
 	center: (theme) => css`
@@ -18,10 +22,21 @@ const modifiers: Modifiers<ArticleVariants> = {
 			align-items: flex-start;
 		}
 	`,
+	withResponsiveSideContent: (theme) => css`
+		flex-direction: column;
+		justify-content: center;
+		gap: ${theme.spaces[15]};
+		@media screen and (${theme.breakpoints.default}) {
+			flex-direction: column;
+		}
+		@media screen and (${theme.breakpoints.medium}) {
+			flex-direction: row;
+		}
+	`,
 };
 
 export const Article = styled.article<ArticleProps>`
-	${({ theme, alignItems, center }) => css`
+	${({ theme, alignItems, center, withResponsiveSideContent }) => css`
 		display: flex;
 		flex-direction: column;
 		align-items: ${alignItems || "center"};
@@ -31,5 +46,6 @@ export const Article = styled.article<ArticleProps>`
 			flex-direction: row;
 		}
 		${center && modifiers.center(theme)};
+		${withResponsiveSideContent && modifiers.withResponsiveSideContent(theme)};
 	`}
 `;
