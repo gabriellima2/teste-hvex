@@ -86,7 +86,7 @@ export const HomeTemplate = () => {
 							</BenefitsSection>
 							<BenefitsImage
 								src="/image2.png"
-								alt="Imagens sobre energia agrupadas"
+								alt="Imagens agrupadas sobre energia"
 								width={100}
 								height={100}
 								quality={100}
@@ -153,7 +153,7 @@ export const HomeTemplate = () => {
 							</SpecsFullSection>
 							<SpecsFullImage
 								src="/image1.png"
-								alt="Imagem do Omni Transformer"
+								alt="Imagem do produto 1"
 								width={100}
 								height={100}
 								quality={100}
