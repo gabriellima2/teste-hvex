@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { MoreInfoList } from "./MoreInfoList";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
-import { forEachInfosMock, InfosMock } from "./mocks/infos-mock";
+import { forEachOfInfosMock, InfosMock } from "./mocks/infos-mock";
 
 const CHECK_ICON_SRC_ATTRS = {
 	DEFAULT: "/check-util-color.svg",
@@ -23,14 +23,14 @@ describe("<MoreInfoList />", () => {
 	describe("Render", () => {
 		it("should render correctly with isAccentCheckIcon false", () => {
 			renderComponent();
-			forEachInfosMock((info) => {
+			forEachOfInfosMock((info) => {
 				testCheckIcon(CHECK_ICON_SRC_ATTRS.DEFAULT);
 				expect(screen.getByText(info)).toBeInTheDocument();
 			});
 		});
 		it("should render correctly with isAccentCheckIcon true", () => {
 			renderComponent({ ...defaultProps, isAccentCheckIcon: true });
-			forEachInfosMock((info) => {
+			forEachOfInfosMock((info) => {
 				testCheckIcon(CHECK_ICON_SRC_ATTRS.ACCENT);
 				expect(screen.getByText(info)).toBeInTheDocument();
 			});

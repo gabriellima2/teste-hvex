@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { SocialNetworksList } from "./SocialNetworksList";
 
 import {
-	forEachSocialNetworksMock,
+	forEachOfSocialNetworksMock,
 	socialNetworksMock,
 } from "./mocks/social-networks-mock";
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
@@ -12,7 +12,7 @@ describe("<SocialNetworkList />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
-			forEachSocialNetworksMock((item) => {
+			forEachOfSocialNetworksMock((item) => {
 				const { name } = item;
 				expect(screen.getByAltText(makeAltText(name))).toBeInTheDocument();
 				expect(screen.getByTitle(makeTitleText(name))).toBeInTheDocument();

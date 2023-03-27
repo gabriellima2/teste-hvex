@@ -3,13 +3,13 @@ import { render, screen } from "@testing-library/react";
 import { ContactList } from "./ContactList";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
-import { contactsMock, forEachContactsMock } from "./mocks/contacts-mock";
+import { contactsMock, forEachOfContactsMock } from "./mocks/contacts-mock";
 
 describe("<ContactList />", () => {
 	describe("Render", () => {
 		it("should render correctly", () => {
 			renderComponent();
-			forEachContactsMock((contact) => {
+			forEachOfContactsMock((contact) => {
 				const { href, name, value } = contact;
 				const anchor = screen.getByText(value);
 

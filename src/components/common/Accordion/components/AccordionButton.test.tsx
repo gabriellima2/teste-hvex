@@ -4,14 +4,9 @@ import userEvent from "@testing-library/user-event";
 import { AccordionButton } from "./AccordionButton";
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 
-type Props = Parameters<typeof AccordionButton>[0];
 const handleClickMock = jest.fn();
 
 describe("<AccordionButton />", () => {
-	afterEach(() => {
-		jest.clearAllMocks();
-	});
-
 	describe("Render", () => {
 		it("should render correctly", () => {
 			const { getByTitle, getByText } = renderComponent();
@@ -34,6 +29,8 @@ describe("<AccordionButton />", () => {
 		});
 	});
 });
+
+type Props = Parameters<typeof AccordionButton>[0];
 
 const defaultProps: Props = {
 	id: "any_id",

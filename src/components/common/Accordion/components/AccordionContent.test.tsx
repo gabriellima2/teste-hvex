@@ -3,7 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { AccordionContent } from "./AccordionContent";
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 
-type Props = Parameters<typeof AccordionContent>[0];
 const MESSAGE = "any_message";
 const SECTION_TESTID = "accordion-content";
 
@@ -33,6 +32,8 @@ describe("<AccordionContent />", () => {
 		});
 	});
 });
+
+type Props = Parameters<typeof AccordionContent>[0];
 
 const defaultProps: Props = {
 	id: "any_id",
