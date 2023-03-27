@@ -6,6 +6,6 @@ export * from "./MoreInfoList";
 export * from "./Links/WhatsappLink";
 export * from "./SpecList";
 export * from "./FrequentlyAskedQuestions";
-export * from "./SocialNetworksList";
+export * from "./SocialNetworkList";
 export * from "./ContactList";
 export * from "./common";
