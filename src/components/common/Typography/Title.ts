@@ -1,17 +1,33 @@
 import styled, { css } from "styled-components";
+import { Modifiers } from "@/@types/Modifiers";
 
 type TitleProps = {
 	contrast?: boolean;
-	isAccent?: boolean;
+	display?: boolean;
+};
+
+type TitleVariants = keyof Pick<TitleProps, "contrast" | "display">;
+
+const modifiers: Modifiers<TitleVariants> = {
+	contrast: (theme) => css`
+		color: ${theme.colors.utils.accent};
+	`,
+	display: (theme) => css`
+		font-size: ${theme.fontSizes.large};
+		@media screen and (${theme.breakpoints.default}) {
+			font-size: ${theme.fontSizes.x_large};
+		}
+	`,
 };
 
 export const Title = styled.h1<TitleProps>`
-	${({ theme, isAccent, contrast }) => css`
-		color: ${contrast && theme.colors.utils.accent};
+	${({ theme, display, contrast }) => css`
 		font-weight: 700;
-		font-size: ${isAccent ? theme.fontSizes.large : theme.fontSizes.normal};
+		font-size: ${theme.fontSizes.normal};
 		@media screen and (${theme.breakpoints.default}) {
-			font-size: ${isAccent ? theme.fontSizes.x_large : theme.fontSizes.large};
+			font-size: ${theme.fontSizes.large};
 		}
+		${contrast && modifiers.contrast(theme)}
+		${display && modifiers.display(theme)}
 	`}
 `;

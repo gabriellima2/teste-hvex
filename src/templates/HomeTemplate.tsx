@@ -36,7 +36,7 @@ export const HomeTemplate = () => {
 				<HeroArticle>
 					<HeroSection>
 						<GroupText>
-							<HeroTitle isAccent>
+							<HeroTitle display>
 								Tenha Informações em tempo real das condições dos ativos e com o
 								monitoramento inteligente
 							</HeroTitle>

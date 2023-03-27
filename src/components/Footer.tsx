@@ -87,8 +87,8 @@ const GroupTitle = styled(Title)`
 		font-size: ${theme.fontSizes.small};
 		margin-bottom: ${theme.spaces[8]};
 		@media screen and (${theme.breakpoints.default}) {
-			font-size: ${theme.fontSizes.small};
 			margin-bottom: ${theme.spaces[10]};
+			font-size: ${theme.fontSizes.small};
 		}
 	`}
 `;
