@@ -12,6 +12,7 @@ export const AccordionContent = (props: AccordionContentProps) => {
 	const { id, buttonId, isExpanded, children } = props;
 	return (
 		<Content
+			data-testid="accordion-content"
 			id={id}
 			role="region"
 			aria-labelledby={buttonId}
