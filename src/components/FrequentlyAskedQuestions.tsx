@@ -1,6 +1,9 @@
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 import { Accordion } from "./common";
+
+import { moveAnimation } from "@/functions/move-animation";
 import type { IFAQ } from "@/interfaces/IFAQ";
 
 type FrequentlyAskedQuestionsProps = {
@@ -13,8 +16,11 @@ export const FrequentlyAskedQuestions = (
 	const { faqs } = props;
 	return (
 		<List length={faqs.length + 1}>
-			{faqs.map((faq) => (
-				<ListItem key={faq.id}>
+			{faqs.map((faq, index) => (
+				<ListItem
+					key={faq.id}
+					{...moveAnimation({ from: index % 2 === 0 ? "left" : "right" })}
+				>
 					<Accordion
 						id={faq.id}
 						title={faq.question}
@@ -39,7 +45,7 @@ const List = styled.ul<ListProps>`
 	`}
 `;
 
-const ListItem = styled.li`
+const ListItem = styled(motion.li)`
 	${({ theme }) => css`
 		@media screen and (${theme.breakpoints.default}) {
 			width: 770px;

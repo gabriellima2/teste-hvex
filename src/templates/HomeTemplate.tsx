@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styled, { css } from "styled-components";
+import { motion } from "framer-motion";
 
 import {
 	DefaultContainer,
@@ -26,6 +27,7 @@ import {
 	benefits,
 	anchors,
 } from "@/assets";
+import { moveAnimation } from "@/functions/move-animation";
 
 export const HomeTemplate = () => {
 	return (
@@ -65,139 +67,150 @@ export const HomeTemplate = () => {
 
 			<WhiteBgColor>
 				<DefaultContainer flexDirection="row">
-					<Article center>
-						<BenefitsSection>
-							<GroupText>
-								<BenefitsTitle>
-									Seja bem-vindo a era da energia inteligente
-								</BenefitsTitle>
-								<Paragraph secondaryColor>
-									As redes inteligentes são um caminho sem volta, o
-									desenvolvimento e disceminação de dispositivos de medição e
-									monitoramento são as ferramentas para redução de custos,
-									perdas e trazem mais previsibilidade para as utilities de
-									energia.
-								</Paragraph>
-							</GroupText>
-							<MoreInfoList infos={benefits} isAccentCheckIcon />
-						</BenefitsSection>
-						<BenefitsImage
-							src="/image2.png"
-							alt="Imagens sobre energia agrupadas"
-							width={100}
-							height={100}
-							quality={100}
-							sizes="100%"
-							placeholder="blur"
-							blurDataURL="/cover.png"
-						/>
-					</Article>
+					<motion.div {...moveAnimation({ from: "right" })}>
+						<Article center>
+							<BenefitsSection>
+								<GroupText>
+									<BenefitsTitle>
+										Seja bem-vindo a era da energia inteligente
+									</BenefitsTitle>
+									<Paragraph secondaryColor>
+										As redes inteligentes são um caminho sem volta, o
+										desenvolvimento e disceminação de dispositivos de medição e
+										monitoramento são as ferramentas para redução de custos,
+										perdas e trazem mais previsibilidade para as utilities de
+										energia.
+									</Paragraph>
+								</GroupText>
+								<MoreInfoList infos={benefits} isAccentCheckIcon />
+							</BenefitsSection>
+							<BenefitsImage
+								src="/image2.png"
+								alt="Imagens sobre energia agrupadas"
+								width={100}
+								height={100}
+								quality={100}
+								sizes="100%"
+								placeholder="blur"
+								blurDataURL="/cover.png"
+							/>
+						</Article>
+					</motion.div>
 				</DefaultContainer>
 			</WhiteBgColor>
 
 			<DefaultContainer>
-				<SpecPreviewArticle withResponsiveSideContent>
-					<GroupText>
-						<GroupTitle>
-							<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
-							<Subtitle accent>
-								É o dispositivo capaz de integrar os transformadores as redes
-								inteligentes
-							</Subtitle>
-						</GroupTitle>
+				<motion.div {...moveAnimation({ from: "left" })}>
+					<SpecPreviewArticle withResponsiveSideContent>
+						<GroupText>
+							<GroupTitle>
+								<SpecPreviewTitle>OMNI TRAFO</SpecPreviewTitle>
+								<Subtitle accent>
+									É o dispositivo capaz de integrar os transformadores as redes
+									inteligentes
+								</Subtitle>
+							</GroupTitle>
 
-						<Paragraph>
-							O Omni Trafo envia informações em tempo real, permitindo a
-							administração remota de dados importantes da rede elétrica, como
-							tensão, corrente, potência passante, energia, temperatura,
-							sobrecarga entre outros, mapeando seu funcionamento, prevendo a
-							vida útil dos ativos e aferindo perdas técnicas e não técnicas.
-						</Paragraph>
-					</GroupText>
-					<SpecsPreview>
-						<SpecList specs={specsPreview} variants="preview" />
-					</SpecsPreview>
-				</SpecPreviewArticle>
+							<Paragraph>
+								O Omni Trafo envia informações em tempo real, permitindo a
+								administração remota de dados importantes da rede elétrica, como
+								tensão, corrente, potência passante, energia, temperatura,
+								sobrecarga entre outros, mapeando seu funcionamento, prevendo a
+								vida útil dos ativos e aferindo perdas técnicas e não técnicas.
+							</Paragraph>
+						</GroupText>
+						<SpecsPreview>
+							<SpecList specs={specsPreview} variants="preview" />
+						</SpecsPreview>
+					</SpecPreviewArticle>
+				</motion.div>
 			</DefaultContainer>
 
 			<Details>
 				<DefaultContainer flexDirection="row">
-					<SpecFullArticle withResponsiveSideContent>
-						<SpecsFullSection>
-							<GroupText>
-								<SpecsFullGroupTitle>
-									<SpecsFullTitle>Omni trafo</SpecsFullTitle>
-									<Line />
-									<SpecsFullSubtitle>
-										Monitoramento inteligente de transformadores de distribuição
-									</SpecsFullSubtitle>
-								</SpecsFullGroupTitle>
-								<Paragraph secondaryColor>
-									O Omni trafo é uma solução consolidada para monitoramento de
-									ativos. Através deste equipamento, informações importantes da
-									rede são enviadas em tempo real, permitindo assim a
-									administração remota de dados como:
-								</Paragraph>
-							</GroupText>
-							<SpecsFull>
-								<SpecList specs={specsFull} variants="full" />
-							</SpecsFull>
-						</SpecsFullSection>
-						<SpecsFullImage
-							src="/image1.png"
-							alt="Imagem do Omni Transformer"
-							width={100}
-							height={100}
-							quality={100}
-							sizes="100%"
-							priority
-							placeholder="blur"
-							blurDataURL="/cover.png"
-						/>
-					</SpecFullArticle>
+					<motion.div {...moveAnimation({ from: "right" })}>
+						<SpecFullArticle withResponsiveSideContent>
+							<SpecsFullSection>
+								<GroupText>
+									<SpecsFullGroupTitle>
+										<SpecsFullTitle>Omni trafo</SpecsFullTitle>
+										<Line />
+										<SpecsFullSubtitle>
+											Monitoramento inteligente de transformadores de
+											distribuição
+										</SpecsFullSubtitle>
+									</SpecsFullGroupTitle>
+									<Paragraph secondaryColor>
+										O Omni trafo é uma solução consolidada para monitoramento de
+										ativos. Através deste equipamento, informações importantes
+										da rede são enviadas em tempo real, permitindo assim a
+										administração remota de dados como:
+									</Paragraph>
+								</GroupText>
+								<SpecsFull>
+									<SpecList specs={specsFull} variants="full" />
+								</SpecsFull>
+							</SpecsFullSection>
+							<SpecsFullImage
+								src="/image1.png"
+								alt="Imagem do Omni Transformer"
+								width={100}
+								height={100}
+								quality={100}
+								sizes="100%"
+								priority
+								placeholder="blur"
+								blurDataURL="/cover.png"
+							/>
+						</SpecFullArticle>
+					</motion.div>
 				</DefaultContainer>
 
 				<DefaultContainer flexDirection="row">
-					<Article withResponsiveSideContent center>
-						<SubInfoSection>
-							<GroupText>
-								<Title contrast>
-									Desenvolvido para melhorar a performance dos ativos de
-									distribuição
-								</Title>
-								<Line />
-							</GroupText>
-							<MoreInfoList infos={features} />
-						</SubInfoSection>
-						<FeaturesImage
-							src="/image3.png"
-							alt="Imagem do Omni Transformer"
-							width={100}
-							height={100}
-							quality={100}
-							sizes="100%"
-							placeholder="blur"
-							blurDataURL="/cover.png"
-						/>
-					</Article>
+					<motion.div {...moveAnimation({ from: "left" })}>
+						<Article withResponsiveSideContent center>
+							<SubInfoSection>
+								<GroupText>
+									<Title contrast>
+										Desenvolvido para melhorar a performance dos ativos de
+										distribuição
+									</Title>
+									<Line />
+								</GroupText>
+								<MoreInfoList infos={features} />
+							</SubInfoSection>
+							<FeaturesImage
+								src="/image3.png"
+								alt="Imagem do Omni Transformer"
+								width={100}
+								height={100}
+								quality={100}
+								sizes="100%"
+								placeholder="blur"
+								blurDataURL="/cover.png"
+							/>
+						</Article>
+					</motion.div>
 				</DefaultContainer>
 			</Details>
 
 			<DefaultContainer>
-				<LearnMoreArticle>
-					<LearnMoreTitle>
-						Quer saber mais sobre como podemos te ajudar a melhorar a
-						performance de seus ativos?
-					</LearnMoreTitle>
-					<Line />
-					<LearnMoreLink
-						href="#"
-						border
-						title="Para saber mais, fale com um consultor"
-					>
-						Falar com um consultor
-					</LearnMoreLink>
-				</LearnMoreArticle>
+				<motion.div {...moveAnimation({ from: "right" })}>
+					<LearnMoreArticle>
+						<LearnMoreTitle>
+							Quer saber mais sobre como podemos te ajudar a melhorar a
+							performance de seus ativos?
+						</LearnMoreTitle>
+						<Line />
+						<LearnMoreLink
+							href="#"
+							border
+							title="Para saber mais, fale com um consultor"
+						>
+							Falar com um consultor
+						</LearnMoreLink>
+					</LearnMoreArticle>
+				</motion.div>
 			</DefaultContainer>
 
 			<WhiteBgColor>
