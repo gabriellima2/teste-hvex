@@ -58,7 +58,7 @@ export const Navigation = (props: NavigationProps) => {
 					<Anchors>
 						<AnchorList anchors={anchors} />
 						<AnchorListItem>
-							<BuyNowLink title="Comprar" href="#" hasBorder>
+							<BuyNowLink title="Comprar" href="#" border>
 								Comprar agora
 							</BuyNowLink>
 						</AnchorListItem>

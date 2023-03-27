@@ -14,7 +14,11 @@ export const SocialNetworksList = (props: SocialNetworksListProps) => {
 		<>
 			{socialNetworks.map((socialNetwork, i) => (
 				<SocialNetworkListItem key={i}>
-					<SocialNetworkLink href="#" title={`Ir para ${socialNetwork.name}`}>
+					<SocialNetworkLink
+						href="#"
+						title={`Ir para ${socialNetwork.name}`}
+						rounded
+					>
 						<Image
 							src={socialNetwork.iconSrc}
 							alt={`Ícone da rede social ${socialNetwork.name}`}
@@ -36,12 +40,9 @@ const SocialNetworkLink = styled(BaseLink)`
 	${({ theme }) => css`
 		width: 50px;
 		height: 50px;
-		min-width: auto;
-		min-height: auto;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 100%;
 		background: ${theme.colors.brand.main};
 	`}
 `;

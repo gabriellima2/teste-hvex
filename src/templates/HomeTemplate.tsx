@@ -193,7 +193,7 @@ export const HomeTemplate = () => {
 					<Line />
 					<LearnMoreLink
 						href="#"
-						hasBorder
+						border
 						title="Para saber mais, fale com um consultor"
 					>
 						Falar com um consultor

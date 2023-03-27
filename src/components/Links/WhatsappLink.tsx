@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { BaseLink } from "../common";
 
 export const WhatsappLink = () => (
-	<Link href="#" title="Entrar em contato via Whatsaspp">
+	<Link href="#" title="Entrar em contato via Whatsaspp" rounded>
 		<Icon>
 			<BsWhatsapp />
 		</Icon>
@@ -13,8 +13,6 @@ export const WhatsappLink = () => (
 
 const Link = styled(BaseLink)`
 	${({ theme }) => css`
-		min-width: auto;
-		min-height: auto;
 		width: 64px;
 		height: 64px;
 
@@ -22,7 +20,6 @@ const Link = styled(BaseLink)`
 		bottom: ${theme.spaces[15]};
 		right: ${theme.spaces[5]};
 		z-index: 10000;
-		border-radius: 100%;
 		&:hover,
 		&:focus {
 			color: ${theme.colors.brand.main};
