@@ -83,6 +83,8 @@ const Nav = styled.nav<NavProps>`
 		top: 0;
 		z-index: 500;
 		padding-top: 78px;
+		transition: all 0.2s ease;
+		opacity: ${props.isOpen ? 1 : 0};
 		visibility: ${props.isOpen ? "visible" : "hidden"};
 		background: ${theme.colors.utils.contrast};
 		@media screen and (${theme.breakpoints.medium}) {
@@ -92,6 +94,7 @@ const Nav = styled.nav<NavProps>`
 			padding-top: 0;
 			position: static;
 			visibility: visible;
+			opacity: 1;
 			display: block;
 		}
 	`}
