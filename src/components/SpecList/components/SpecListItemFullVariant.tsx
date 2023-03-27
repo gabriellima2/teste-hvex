@@ -7,7 +7,7 @@ import type { ISpec } from "@/interfaces/ISpec";
 export const SpecListItemFullVariant = (props: ISpec) => {
 	const { title, image } = props;
 	return (
-		<Container>
+		<Container data-testid="full-variant">
 			<ImageContainer>
 				<Image {...image} width={40} height={40} />
 			</ImageContainer>

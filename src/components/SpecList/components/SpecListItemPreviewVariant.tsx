@@ -7,14 +7,16 @@ import type { ISpec } from "@/interfaces/ISpec";
 export const SpecListItemPreviewVariant = (props: ISpec) => {
 	const { title, image } = props;
 	return (
-		<li>
+		<Container data-testid="preview-variant">
 			<Card>
 				<Image {...image} width={100} height={100} />
 				<Title>{title}</Title>
 			</Card>
-		</li>
+		</Container>
 	);
 };
+
+const Container = styled.li``;
 
 const Image = styled(NextImage)`
 	${({ theme }) => css`
