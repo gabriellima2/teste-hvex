@@ -11,7 +11,6 @@ import {
 	Paragraph,
 	Subtitle,
 	WhiteBgColor,
-	CenteredArticle,
 	SubInfoSection,
 	Article,
 	Line,
@@ -66,7 +65,7 @@ export const HomeTemplate = () => {
 
 			<WhiteBgColor>
 				<DefaultContainer flexDirection="row">
-					<CenteredArticle>
+					<Article center>
 						<BenefitsSection>
 							<GroupText>
 								<BenefitsTitle>
@@ -92,7 +91,7 @@ export const HomeTemplate = () => {
 							placeholder="blur"
 							blurDataURL="/cover.png"
 						/>
-					</CenteredArticle>
+					</Article>
 				</DefaultContainer>
 			</WhiteBgColor>
 
@@ -159,7 +158,7 @@ export const HomeTemplate = () => {
 				</DefaultContainer>
 
 				<DefaultContainer flexDirection="row">
-					<CenteredArticle>
+					<Article center>
 						<SubInfoSection>
 							<GroupText>
 								<Title contrast>
@@ -180,7 +179,7 @@ export const HomeTemplate = () => {
 							placeholder="blur"
 							blurDataURL="/cover.png"
 						/>
-					</CenteredArticle>
+					</Article>
 				</DefaultContainer>
 			</Details>
 
@@ -271,7 +270,7 @@ const HeroImage = styled(Image)`
 const BenefitsSection = styled(SubInfoSection)`
 	${({ theme }) => css`
 		order: 0;
-		@media screen and (${theme.breakpoints.medium}) {
+		@media screen and (${theme.breakpoints.default}) {
 			order: 1;
 		}
 	`}

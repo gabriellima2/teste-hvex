@@ -6,7 +6,6 @@ export * from "./Typography/Paragraph";
 export * from "./Typography/Subtitle";
 export * from "./Typography/Title";
 export * from "./DefaultContainer";
-export * from "./CenteredArticle";
 export * from "./SubInfoSection";
 export * from "./WhiteBgColor";
 export * from "./Accordion";
