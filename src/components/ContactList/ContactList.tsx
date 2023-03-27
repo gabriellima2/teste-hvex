@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import type { IContact } from "@/interfaces/IContact";
-import { BaseLink } from "./common";
+import { BaseLink } from "../common";
 
 type ContactListProps = {
 	contacts: IContact[];
