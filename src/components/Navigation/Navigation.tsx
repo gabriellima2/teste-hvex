@@ -53,6 +53,7 @@ export const Navigation = (props: NavigationProps) => {
 				</NavigationButton>
 
 				<Nav
+					data-testid="navigation"
 					isOpen={isOpen}
 					role={userDeviceIsMobile ? "dialog" : undefined}
 					aria-hidden={!isOpen && userDeviceIsMobile}
