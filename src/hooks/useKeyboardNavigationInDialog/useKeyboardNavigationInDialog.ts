@@ -42,7 +42,6 @@ export function useKeyboardNavigationInDialog<El extends HTMLElement>(
 	};
 
 	const handleKeyDown = (e: KeyboardEvent<El>) => {
-		console.log(e.key);
 		if (e.key === "Tab" || e.key === "Shift") return handleFocus(e);
 		if (e.key === "Escape") return handleDisable();
 	};
