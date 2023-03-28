@@ -9,6 +9,8 @@ type AnchorListProps = {
 	handleDisableNavigation: () => void;
 };
 
+export const makeTitleText = (name: string) => `Ir para ${name}`;
+
 export const AnchorList = (props: AnchorListProps) => {
 	const { anchors, handleDisableNavigation } = props;
 	const { pathname } = useRouter();
@@ -28,7 +30,7 @@ export const AnchorList = (props: AnchorListProps) => {
 					<AnchorListItem key={anchor.display}>
 						<Anchor
 							href={anchor.href}
-							title={anchor.title || `Ir para ${anchor.display}`}
+							title={anchor.title || makeTitleText(anchor.display)}
 							aria-current={isActive}
 							aria-disabled={isActive}
 							tabIndex={isActive ? -1 : 0}
