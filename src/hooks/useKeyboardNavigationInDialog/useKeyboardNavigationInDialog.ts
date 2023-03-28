@@ -1,28 +1,22 @@
-import {
-	type KeyboardEvent,
-	type MutableRefObject,
-	useRef,
-	useEffect,
-} from "react";
+import { type KeyboardEvent, type MutableRefObject, useEffect } from "react";
 import { changeFocusEl } from "@/functions/change-focus-el";
 
-type UseKeyboardNavigationInDialogParams = {
+type UseKeyboardNavigationInDialogParams<El> = {
+	ref: MutableRefObject<El | null>;
 	isOpen: boolean;
 	handleDisable: () => void;
 };
 
 type UseKeyboardNavigationInDialogReturn<El> = {
-	ref: MutableRefObject<null | El>;
 	handleKeyDown: (e: KeyboardEvent<El>) => void;
 };
 
 let lastFocusableElementBeforeOpenMenu: Element;
 
 export function useKeyboardNavigationInDialog<El extends HTMLElement>(
-	params: UseKeyboardNavigationInDialogParams
+	params: UseKeyboardNavigationInDialogParams<El>
 ): UseKeyboardNavigationInDialogReturn<El> {
-	const { isOpen, handleDisable } = params;
-	const ref = useRef<null | El>(null);
+	const { ref, isOpen, handleDisable } = params;
 
 	const handleFocus = (e: KeyboardEvent<El>) => {
 		if (!ref.current) return;
@@ -48,6 +42,7 @@ export function useKeyboardNavigationInDialog<El extends HTMLElement>(
 	};
 
 	const handleKeyDown = (e: KeyboardEvent<El>) => {
+		console.log(e.key);
 		if (e.key === "Tab" || e.key === "Shift") return handleFocus(e);
 		if (e.key === "Escape") return handleDisable();
 	};
@@ -66,7 +61,6 @@ export function useKeyboardNavigationInDialog<El extends HTMLElement>(
 	}, [isOpen]);
 
 	return {
-		ref,
 		handleKeyDown,
 	};
 }

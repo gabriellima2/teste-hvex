@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styled, { css } from "styled-components";
 
 import {
+	useKeyboardNavigationInDialog,
 	useToggle,
 	useWindowSize,
-	useKeyboardNavigationInDialog,
 } from "@/hooks";
 
 import { AnchorList, NavigationButton } from "./components";
@@ -16,9 +16,11 @@ type NavigationProps = Pick<Parameters<typeof AnchorList>[0], "anchors">;
 
 export const Navigation = (props: NavigationProps) => {
 	const { anchors } = props;
+	const navigationRef = useRef<HTMLDivElement | null>(null);
 	const { width: windowWidth } = useWindowSize();
 	const { isOpen, handleDisable, handleActive } = useToggle();
-	const { ref, handleKeyDown } = useKeyboardNavigationInDialog<HTMLDivElement>({
+	const { handleKeyDown } = useKeyboardNavigationInDialog<HTMLDivElement>({
+		ref: navigationRef,
 		isOpen,
 		handleDisable,
 	});
@@ -38,7 +40,7 @@ export const Navigation = (props: NavigationProps) => {
 	return (
 		<>
 			<Container
-				ref={ref}
+				ref={navigationRef}
 				onKeyDown={(e) => {
 					if (userDeviceIsMobile) return handleKeyDown(e);
 				}}
