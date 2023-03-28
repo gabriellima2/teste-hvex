@@ -27,16 +27,16 @@ describe("useKeyboardNavigationInDialog", () => {
 			const firstChildrenNode = containerElement.firstElementChild;
 			const lastChildrenNode = containerElement.lastElementChild;
 
-			it("should handle key down with ESC key press", () => {
+			it("should handle key down when pressing Escape key", () => {
 				const { result } = render();
 				const event = makeKeyboardEvent<TElement>("keydown", { key: "Escape" });
 				result.current.handleKeyDown(event);
 				expect(handleDisable).toHaveBeenCalledTimes(1);
 			});
 
-			it("should handle key down with Tab and Shift key press", () => {
+			it("should handle key down when pressing TAB and SHIFT keys", () => {
 				if (!lastChildrenNode || !firstChildrenNode)
-					throw new Error(elementsChildError);
+					throw new Error(ELEMENTS_CHILD_IS_EMPTY);
 
 				const { result } = render();
 				const event = makeKeyboardEvent<TElement>("keydown", {
@@ -49,9 +49,9 @@ describe("useKeyboardNavigationInDialog", () => {
 				expect(handleDisable).not.toHaveBeenCalled();
 				expect(document.activeElement).toStrictEqual(lastChildrenNode);
 			});
-			it("should handle key down with Tab key press", () => {
+			it("should handle key down when pressing Tab key", () => {
 				if (!lastChildrenNode || !firstChildrenNode)
-					throw new Error(elementsChildError);
+					throw new Error(ELEMENTS_CHILD_IS_EMPTY);
 
 				const { result } = render();
 				const event = makeKeyboardEvent<TElement>("keydown", { key: "Tab" });
@@ -67,7 +67,7 @@ describe("useKeyboardNavigationInDialog", () => {
 
 type Params = Parameters<typeof useKeyboardNavigationInDialog>[0];
 
-const elementsChildError = "Elements child is empty";
+const ELEMENTS_CHILD_IS_EMPTY = "Elements child is empty";
 
 const defaultParams: Params = {
 	ref: { current: containerElement },
