@@ -1,19 +1,15 @@
 import { act, renderHook } from "@testing-library/react";
-import { useWindowSize } from "./useWindowSize";
+
+import { useWindowSize } from ".";
+import { defineWindowSize } from "@/__mocks__/define-window-size";
 
 const SIZE = 300;
 
 describe("useWindowSize", () => {
 	beforeAll(() => {
-		Object.defineProperty(window, "innerWidth", {
-			writable: true,
-			configurable: true,
-			value: SIZE,
-		});
-		Object.defineProperty(window, "innerHeight", {
-			writable: true,
-			configurable: true,
-			value: SIZE,
+		defineWindowSize({
+			width: SIZE,
+			height: SIZE,
 		});
 	});
 	it("should update sizes state with resize", () => {
