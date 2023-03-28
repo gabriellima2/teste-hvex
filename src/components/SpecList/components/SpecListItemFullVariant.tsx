@@ -4,10 +4,12 @@ import styled, { css } from "styled-components";
 import { Center } from "@/components/common";
 import type { ISpec } from "@/interfaces/ISpec";
 
+export const makeFullVariantTestId = () => "full-variant";
+
 export const SpecListItemFullVariant = (props: ISpec) => {
 	const { title, image } = props;
 	return (
-		<Container data-testid="full-variant">
+		<Container data-testid={makeFullVariantTestId()}>
 			<ImageContainer>
 				<Image {...image} width={40} height={40} />
 			</ImageContainer>

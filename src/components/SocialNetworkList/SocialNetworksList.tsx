@@ -8,6 +8,9 @@ type SocialNetworksListProps = {
 	socialNetworks: ISocialNetwork[];
 };
 
+export const makeTitleText = (name: string) => `Ir para ${name}`;
+export const makeAltText = (name: string) => `Ícone da rede social ${name}`;
+
 export const SocialNetworksList = (props: SocialNetworksListProps) => {
 	const { socialNetworks } = props;
 	return (
@@ -16,12 +19,12 @@ export const SocialNetworksList = (props: SocialNetworksListProps) => {
 				<SocialNetworkListItem key={i}>
 					<SocialNetworkLink
 						href="#"
-						title={`Ir para ${socialNetwork.name}`}
+						title={makeTitleText(socialNetwork.name)}
 						rounded
 					>
 						<Image
 							src={socialNetwork.iconSrc}
-							alt={`Ícone da rede social ${socialNetwork.name}`}
+							alt={makeAltText(socialNetwork.name)}
 							width={24}
 							height={24}
 						/>

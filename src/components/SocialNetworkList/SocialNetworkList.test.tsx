@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
 
-import { SocialNetworksList } from "./SocialNetworksList";
+import {
+	makeAltText,
+	makeTitleText,
+	SocialNetworksList,
+} from "./SocialNetworksList";
 
 import {
 	forEachOfSocialNetworksMock,
@@ -20,9 +24,6 @@ describe("<SocialNetworkList />", () => {
 		});
 	});
 });
-
-const makeTitleText = (name: string) => `Ir para ${name}`;
-const makeAltText = (name: string) => `Ícone da rede social ${name}`;
 
 const renderComponent = () =>
 	render(

@@ -6,6 +6,9 @@ type MoreInfoListProps = {
 	isAccentCheckIcon?: boolean;
 };
 
+export const makeAccentCheckIconSrc = () => "/check-brand-color.svg";
+export const makeDefaultCheckIconSrc = () => "/check-util-color.svg";
+
 export const MoreInfoList = (props: MoreInfoListProps) => {
 	const { infos, isAccentCheckIcon } = props;
 	return (
@@ -15,8 +18,8 @@ export const MoreInfoList = (props: MoreInfoListProps) => {
 					<Image
 						src={
 							isAccentCheckIcon
-								? "/check-brand-color.svg"
-								: "/check-util-color.svg"
+								? makeAccentCheckIconSrc()
+								: makeDefaultCheckIconSrc()
 						}
 						alt="Ícone de Check"
 						width={20}

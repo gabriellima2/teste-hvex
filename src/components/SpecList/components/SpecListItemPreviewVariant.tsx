@@ -4,10 +4,12 @@ import styled, { css } from "styled-components";
 import { Card } from "@/components/common";
 import type { ISpec } from "@/interfaces/ISpec";
 
+export const makePreviewVariantTestId = () => "preview-variant";
+
 export const SpecListItemPreviewVariant = (props: ISpec) => {
 	const { title, image } = props;
 	return (
-		<Container data-testid="preview-variant">
+		<Container data-testid={makePreviewVariantTestId()}>
 			<Card>
 				<Image {...image} width={100} height={100} />
 				<Title>{title}</Title>

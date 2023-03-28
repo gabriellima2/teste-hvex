@@ -1,13 +1,14 @@
 import { render, screen } from "@testing-library/react";
 
 import { SpecList } from "./SpecList";
+import { makePreviewVariantTestId, makeFullVariantTestId } from "./components";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { forEachOfSpecsMock, specsMock } from "./mocks/specs-mock";
 
 const VARIANTS_TESTID = {
-	PREVIEW: "preview-variant",
-	FULL: "full-variant",
+	PREVIEW: makePreviewVariantTestId(),
+	FULL: makeFullVariantTestId(),
 };
 
 describe("<SpecList />", () => {
@@ -15,17 +16,19 @@ describe("<SpecList />", () => {
 		it("should render correctly with preview variant", () => {
 			renderComponent();
 			forEachOfSpecsMock((spec) => {
+				const { title, image } = spec;
 				expect(screen.getByTestId(VARIANTS_TESTID.PREVIEW)).toBeInTheDocument();
-				expect(screen.getByAltText(spec.image.alt)).toBeInTheDocument();
-				expect(screen.getByText(spec.title)).toBeInTheDocument();
+				expect(screen.getByAltText(image.alt)).toBeInTheDocument();
+				expect(screen.getByText(title)).toBeInTheDocument();
 			});
 		});
 		it("should render correctly with full variant", () => {
 			renderComponent({ ...defaultProps, variants: "full" });
 			forEachOfSpecsMock((spec) => {
+				const { title, image } = spec;
 				expect(screen.getByTestId(VARIANTS_TESTID.FULL)).toBeInTheDocument();
-				expect(screen.getByAltText(spec.image.alt)).toBeInTheDocument();
-				expect(screen.getByText(spec.title)).toBeInTheDocument();
+				expect(screen.getByAltText(image.alt)).toBeInTheDocument();
+				expect(screen.getByText(title)).toBeInTheDocument();
 			});
 		});
 	});

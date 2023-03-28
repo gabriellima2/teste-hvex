@@ -1,13 +1,17 @@
 import { render, screen } from "@testing-library/react";
 
-import { MoreInfoList } from "./MoreInfoList";
+import {
+	makeAccentCheckIconSrc,
+	makeDefaultCheckIconSrc,
+	MoreInfoList,
+} from "./MoreInfoList";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { forEachOfInfosMock, InfosMock } from "./mocks/infos-mock";
 
 const CHECK_ICON_SRC_ATTRS = {
-	DEFAULT: "/check-util-color.svg",
-	ACCENT: "/check-brand-color.svg",
+	DEFAULT: makeDefaultCheckIconSrc(),
+	ACCENT: makeAccentCheckIconSrc(),
 };
 
 describe("<MoreInfoList />", () => {

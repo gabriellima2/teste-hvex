@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { ContactList } from "./ContactList";
+import { ContactList, makeTitleText } from "./ContactList";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { contactsMock, forEachOfContactsMock } from "./mocks/contacts-mock";
@@ -20,8 +20,6 @@ describe("<ContactList />", () => {
 		});
 	});
 });
-
-const makeTitleText = (name: string) => `Entrar em contato via ${name}`;
 
 const renderComponent = () =>
 	render(
