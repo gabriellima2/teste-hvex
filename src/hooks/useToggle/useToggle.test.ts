@@ -12,40 +12,46 @@ describe("useToggle", () => {
 		});
 	});
 	describe("Methods", () => {
-		it("should toggle isOpen", () => {
-			const { result } = render();
-			expect(result.current.isOpen).toBeFalsy();
+		describe("HandleToggle", () => {
+			it("should toggle isOpen", () => {
+				const { result } = render();
+				expect(result.current.isOpen).toBeFalsy();
 
-			act(() => {
-				result.current.handleToggle();
-			});
-			expect(result.current.isOpen).toBeTruthy();
+				act(() => {
+					result.current.handleToggle();
+				});
+				expect(result.current.isOpen).toBeTruthy();
 
-			act(() => {
-				result.current.handleToggle();
+				act(() => {
+					result.current.handleToggle();
+				});
+				expect(result.current.isOpen).toBeFalsy();
 			});
-			expect(result.current.isOpen).toBeFalsy();
 		});
-		it("isOpen should be false", () => {
-			const { result } = render();
+		describe("handleDisable", () => {
+			it("isOpen should be false", () => {
+				const { result } = render();
 
-			act(() => {
-				result.current.handleActive();
-			});
-			expect(result.current.isOpen).toBeTruthy();
+				act(() => {
+					result.current.handleActive();
+				});
+				expect(result.current.isOpen).toBeTruthy();
 
-			act(() => {
-				result.current.handleDisable();
+				act(() => {
+					result.current.handleDisable();
+				});
+				expect(result.current.isOpen).toBeFalsy();
 			});
-			expect(result.current.isOpen).toBeFalsy();
 		});
-		it("isOpen should be true", () => {
-			const { result } = render();
+		describe("handleActive", () => {
+			it("isOpen should be true", () => {
+				const { result } = render();
 
-			act(() => {
-				result.current.handleActive();
+				act(() => {
+					result.current.handleActive();
+				});
+				expect(result.current.isOpen).toBeTruthy();
 			});
-			expect(result.current.isOpen).toBeTruthy();
 		});
 	});
 });
