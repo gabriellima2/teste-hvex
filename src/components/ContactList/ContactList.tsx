@@ -7,7 +7,8 @@ type ContactListProps = {
 	contacts: IContact[];
 };
 
-export const makeTitleText = (name: string) => `Entrar em contato via ${name}`;
+export const makeContactTitleText = (name: string) =>
+	`Entrar em contato via ${name}`;
 
 export const ContactList = (props: ContactListProps) => {
 	const { contacts } = props;

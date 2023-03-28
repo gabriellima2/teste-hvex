@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 
 import {
-	makeAltText,
-	makeTitleText,
+	makeSocialNetworkImageAltText,
+	makeSocialNetworkTitleText,
 	SocialNetworksList,
 } from "./SocialNetworksList";
 
@@ -18,8 +18,12 @@ describe("<SocialNetworkList />", () => {
 			renderComponent();
 			forEachOfSocialNetworksMock((item) => {
 				const { name } = item;
-				expect(screen.getByAltText(makeAltText(name))).toBeInTheDocument();
-				expect(screen.getByTitle(makeTitleText(name))).toBeInTheDocument();
+				expect(
+					screen.getByAltText(makeSocialNetworkImageAltText(name))
+				).toBeInTheDocument();
+				expect(
+					screen.getByTitle(makeSocialNetworkTitleText(name))
+				).toBeInTheDocument();
 			});
 		});
 	});

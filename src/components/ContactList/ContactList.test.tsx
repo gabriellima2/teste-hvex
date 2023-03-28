@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 
-import { ContactList, makeTitleText } from "./ContactList";
+import { ContactList, makeContactTitleText } from "./ContactList";
 
 import { WithThemeProvider } from "@/__mocks__/with-theme-provider";
 import { contactsMock, forEachOfContactsMock } from "./mocks/contacts-mock";
@@ -15,7 +15,7 @@ describe("<ContactList />", () => {
 
 				expect(anchor).toBeInTheDocument();
 				expect(anchor).toHaveAttribute("href", href);
-				expect(anchor).toHaveAttribute("title", makeTitleText(name));
+				expect(anchor).toHaveAttribute("title", makeContactTitleText(name));
 			});
 		});
 	});
