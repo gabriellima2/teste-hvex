@@ -2,9 +2,18 @@ import { act, renderHook } from "@testing-library/react";
 import { useToggle } from ".";
 
 describe("useToggle", () => {
+	describe("Initial values", () => {
+		it("should return initial values", () => {
+			const { result } = render();
+			expect(result.current.isOpen).toBeFalsy();
+			expect(typeof result.current.handleToggle).toBe("function");
+			expect(typeof result.current.handleDisable).toBe("function");
+			expect(typeof result.current.handleActive).toBe("function");
+		});
+	});
 	describe("Methods", () => {
 		it("should toggle isOpen", () => {
-			const { result } = renderHook(useToggle);
+			const { result } = render();
 			expect(result.current.isOpen).toBeFalsy();
 
 			act(() => {
@@ -18,7 +27,7 @@ describe("useToggle", () => {
 			expect(result.current.isOpen).toBeFalsy();
 		});
 		it("isOpen should be false", () => {
-			const { result } = renderHook(useToggle);
+			const { result } = render();
 
 			act(() => {
 				result.current.handleActive();
@@ -31,7 +40,7 @@ describe("useToggle", () => {
 			expect(result.current.isOpen).toBeFalsy();
 		});
 		it("isOpen should be true", () => {
-			const { result } = renderHook(useToggle);
+			const { result } = render();
 
 			act(() => {
 				result.current.handleActive();
@@ -40,3 +49,5 @@ describe("useToggle", () => {
 		});
 	});
 });
+
+const render = () => renderHook(useToggle);
