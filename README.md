@@ -1,7 +1,7 @@
 <h1 align="center">
     <img alt="Hvex logo" src="./public/docs/logo.svg" />
     <br>
-    Teste Técnico para Analista Desenvolvedor Front-end na HVEX
+    Teste Técnico para Analista Desenvolvedor Front-end Júnior na HVEX
 </h1>
 
 <div align="center">
