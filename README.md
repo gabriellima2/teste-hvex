@@ -8,8 +8,6 @@
   <img src="./public/docs/preview.png" alt="demonstração do projeto" >
 </div>
 
-<p align="center"><a href="https://teste-hvex.vercel.app/">Acessar Projeto</a></p>
-
 # Observação
 
 Utilizei testes unitários para hooks e componentes que contém lógicas,
